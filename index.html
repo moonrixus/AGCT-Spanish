@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGCT</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Set background color to white */
+        }
+        img {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .start-btn, .info-btn {
+            display: inline-block;
+            outline: 0;
+            cursor: pointer;
+            padding: 5px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            vertical-align: middle;
+            border: 1px solid #1b1f2326; /* Keep the border color */
+            border-radius: 6px;
+            color: #24292e;
+            background-color: #ffffff; /* Background stays white */
+            box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+            transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            transition-property: color, background-color, border-color;
+        }
+        .start-btn:hover, .info-btn:hover {
+            background-color: #f3f4f6; /* Light gray on hover */
+            border-color: #1b1f2326;
+            transition-duration: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <img src="assets/logo.png" alt="AGCT Logo">
+    
+    <p>The Army General Classification Test (AGCT) is a professionally developed IQ Test, and the predecessor to the AFQT. It boasts a strong g-loading of <strong>~0.925</strong>, meaning its accuracy is on par with high level professional IQ Tests. This 40 minute comprehensive test evaluates verbal, quantitative, and spatial abilities.</p>
+    <p>The AGCT was developed by the US Army for the purpose of job assignment among soldiers, undergoing constant improvements and revisions over time to ensure its accuracy. Amassing a massive sample of more than 12 million soldiers, this transcends the samples of modern professional tests by over 5,000 times. This ensures that its norms adhere to the utmost rigor and is a reason why the AGCT format is regarded as one of the most accurate IQ tests ever created. Its questions are designed to minimize prior knowledge from education and culture, due to drafted soldiers being of all classes and lifestyles.</p>
+    <p>We've successfully recreated the AGCT in its original format using the most up-to-date norms and modern standard deviation. While the current AFQT/ASVAB testing system provides a percentile score, it's not a normed IQ test as it once was, likely stemming from political reasons. At some point, legislation in many jurisdictions prohibited the use of pre-employment IQ testing, forcing institutions to abandon IQ tests in favor of achievement-focused methods of measuring potential performance. However, scores from the AGCT are still psychometrically valid, being accepted for admission by Mensa, Intertel, and other High IQ societies to this day.</p>
+    
+    <div class="button-container">
+        <a href="training.html" class="start-btn">Prepare for Test Taking</a>
+        <a href="validity.html" class="info-btn">Curious About the Test's Validity?</a>
+    </div>
+</body>
+</html>
