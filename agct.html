@@ -1584,20 +1584,19 @@
     const form = document.getElementById('testForm');
     const submitBtn = document.getElementById('submitBtn');
 
-    function updateTimer() {
-        const minutes = Math.floor(totalSeconds / 60);
-        let seconds = totalSeconds % 60;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        timerDisplay.textContent = `Time Remaining: ${minutes}:${seconds}`;
-        if (totalSeconds <= 0) {
-            clearInterval(timerInterval);
-            form.querySelectorAll('input[type=radio]').forEach(radio => radio.disabled = true);
-            submitBtn.style.display = 'block'; // Show the submit button when time is up
-            calculateIQScore(); // Automatically calculate IQ score when timer runs out
-        } else {
-            totalSeconds--;
-        }
+function updateTimer() {
+    const minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    timerDisplay.textContent = `Time Remaining: ${minutes}:${seconds}`;
+    if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        form.querySelectorAll('input[type=radio]').forEach(radio => radio.disabled = true);
+        calculateIQScore(); // Automatically calculate IQ score when timer runs out
+    } else {
+        totalSeconds--;
     }
+}
 
     let timerInterval = setInterval(updateTimer, 1000);
 
