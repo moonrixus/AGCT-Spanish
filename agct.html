@@ -2,1659 +2,363 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AGCT</title>
+    <title>AGCT - Examen de Clasificación General del Ejército</title>
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
-
-    .timer {
-        font-size: 2em;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .question {
-        margin-bottom: 20px;
-    }
-
-    .question p {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-    }
-
-    .options {
-        margin-left: 20px;
-    }
-
-    /* Apply the button style here */
-    .submit-btn {
-        display: inline-block;
-        outline: 0;
-        cursor: pointer;
-        padding: 5px 16px;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-        vertical-align: middle;
-        border: 1px solid #1b1f2326; /* Border color */
-        border-radius: 6px;
-        color: #24292e; /* Text color */
-        background-color: #ffffff; /* Keep background white */
-        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
-        transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-        transition-property: color, background-color, border-color;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    /* Hover effect for the button */
-    .submit-btn:hover {
-        background-color: #f3f4f6;
-        border-color: #1b1f2326;
-        transition-duration: 0.1s;
-    }
-
-    /* Active state effect */
-    .submit-btn:active {
-        transform: translateY(1px);
-    }
-
-    /* Initially hide the submit button */
-    .submit-btn {
-        display: none;
-        margin-top: 20px;
-    }
-</style>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #timer { position: fixed; top: 10px; right: 10px; background: rgba(255, 255, 255, 0.8); padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 1000; font-size: 16px; }
+        .question { margin-bottom: 15px; }
+        .question p { font-size: 1.1em; margin: 5px 0; }
+        .options { margin-left: 20px; }
+        .submit-btn { display: none; padding: 5px 16px; font-size: 14px; border: 1px solid #1b1f2326; border-radius: 6px; background: #fff; cursor: pointer; transition: background-color 0.2s; }
+        .submit-btn:hover { background: #f3f4f6; }
+        .submit-btn:active { transform: translateY(1px); }
+    </style>
 </head>
 <body>
-    <div class="timer" id="timer">Time Remaining: 40:00</div>
+    <div id="timer">Tiempo Restante: 40:00</div>
     <form id="testForm">
-        <!-- Question 11 -->
-        <div class="question">
-            <p>1. The organization of teams FOSTERS interest in games</p>
-            <div class="options">
-                <label><input type="radio" name="q11" value="1"> spoils</label><br>
-                <label><input type="radio" name="q11" value="2"> changes</label><br>
-                <label><input type="radio" name="q11" value="3"> develops</label><br>
-                <label><input type="radio" name="q11" value="4"> stops</label>
-            </div>
-        </div>
-        <!-- Question 12 -->
-        <div class="question">
-            <p>2. The captain gave a VIVID description of the camp.</p>
-            <div class="options">
-                <label><input type="radio" name="q12" value="1"> true</label><br>
-                <label><input type="radio" name="q12" value="2"> clear</label><br>
-                <label><input type="radio" name="q12" value="3"> long</label><br>
-                <label><input type="radio" name="q12" value="4"> short</label>
-            </div>
-        </div>
-        <!-- Question 13 -->
-        <div class="question">
-            <p>3. The new bomb sight is very EFFECTIVE</p>
-            <div class="options">
-                <label><input type="radio" name="q13" value="1"> important</label><br>
-                <label><input type="radio" name="q13" value="2"> desirable</label><br>
-                <label><input type="radio" name="q13" value="3"> successful</label><br>
-                <label><input type="radio" name="q13" value="4"> simple</label>
-            </div>
-        </div>
-        <!-- Question 14 -->
-        <div class="question">
-            <p>4. The men were ASSEMBLED in the mess hall</p>
-            <div class="options">
-                <label><input type="radio" name="q14" value="1"> eating</label><br>
-                <label><input type="radio" name="q14" value="2"> billeted</label><br>
-                <label><input type="radio" name="q14" value="3"> playing</label><br>
-                <label><input type="radio" name="q14" value="4"> gathered</label>
-            </div>
-        </div>
-        <!-- Question 15 -->
-        <div class="question">
-            <p>5. The smaller gun was PREFERABLE</p>
-            <div class="options">
-                <label><input type="radio" name="q15" value="1"> lighter</label><br>
-                <label><input type="radio" name="q15" value="2"> more desirable</label><br>
-                <label><input type="radio" name="q15" value="3"> older</label><br>
-                <label><input type="radio" name="q15" value="4"> more accurate</label>
-            </div>
-        </div>
-        <!-- Question 16 -->
-        <div class="question">
-            <p>6. The ADMINISTRATION of the camp is handled by officers</p>
-            <div class="options">
-                <label><input type="radio" name="q16" value="1"> construction</label><br>
-                <label><input type="radio" name="q16" value="2"> action</label><br>
-                <label><input type="radio" name="q16" value="3"> service</label><br>
-                <label><input type="radio" name="q16" value="4"> management</label>
-            </div>
-        </div>
-        <!-- Question 17 -->
-        <div class="question">
-            <p>7. The company WITHSTOOD the rifle fire</p>
-            <div class="options">
-                <label><input type="radio" name="q17" value="1"> retreated from</label><br>
-                <label><input type="radio" name="q17" value="2"> opposed successfully</label><br>
-                <label><input type="radio" name="q17" value="3"> advanced toward</label><br>
-                <label><input type="radio" name="q17" value="4"> was defeated by</label>
-            </div>
-        </div>
-        <!-- Question 18 -->
-        <div class="question">
-            <p>8. Big guns were UTILIZED in the attack.</p>
-            <div class="options">
-                <label><input type="radio" name="q18" value="1"> abandoned</label><br>
-                <label><input type="radio" name="q18" value="2"> useless</label><br>
-                <label><input type="radio" name="q18" value="3"> used</label><br>
-                <label><input type="radio" name="q18" value="4"> moved</label>
-            </div>
-        </div>
-        <!-- Question 19 -->
-        <div class="question">
-            <p>9. With which can Sergeant Jones buy the most? (A penny is 1 cent, a nickel is 5 cents, a dime is 10 cents, and a quarter is 25 cents)</p>
-            <div class="options">
-                <label><input type="radio" name="q19" value="1"> 3 dimes and 2 nickels</label><br>
-                <label><input type="radio" name="q19" value="2"> 5 dimes</label><br>
-                <label><input type="radio" name="q19" value="3"> 1 quarter, 1 dime, and 4 nickels</label><br>
-                <label><input type="radio" name="q19" value="4"> 3 dimes, 3 nickels, and 4 pennies</label>
-            </div>
-        </div>
-        <!-- Question 20 -->
-        <div class="question">
-            <p>10. How many cartridges does a private have if he has 41 cartridges and uses 2 dozen of them?</p>
-            <div class="options">
-                <label><input type="radio" name="q20" value="1"> 21</label><br>
-                <label><input type="radio" name="q20" value="2"> 17</label><br>
-                <label><input type="radio" name="q20" value="3"> 65</label><br>
-                <label><input type="radio" name="q20" value="4"> 39</label>
-            </div>
-        </div>
-        <!-- Question 21 -->
-        <div class="question">
-            <p>11. Private Black had 26 cartridges, Private Green had 3 times as many as Black, and Private Brown had 19 less than Green. How many did Brown have?</p>
-            <div class="options">
-                <label><input type="radio" name="q21" value="1"> 49</label><br>
-                <label><input type="radio" name="q21" value="2"> 51</label><br>
-                <label><input type="radio" name="q21" value="3"> 59</label><br>
-                <label><input type="radio" name="q21" value="4"> 69</label>
-            </div>
-        </div>
-        <!-- Question 22 -->
-        <div class="question">
-            <p>12. The cost to the Army of installing a new windowpane is 75 cents. if the glass costs 23 cents and the putty 2 cents, how much does the time and labor of the glazier cost?</p>
-            <div class="options">
-                <label><input type="radio" name="q22" value="1"> 35 cents</label><br>
-                <label><input type="radio" name="q22" value="2"> 50 cents</label><br>
-                <label><input type="radio" name="q22" value="3"> 40 cents</label><br>
-                <label><input type="radio" name="q22" value="4"> 25 cents</label>
-            </div>
-        </div>
-        <!-- Question 23 -->
-        <div class="question">
-            <p>13. Private Billings bought some books for $9. He sold them to his bunkmates for $10, making $0.25 on each book. How many books were there?</p>
-            <div class="options">
-                <label><input type="radio" name="q23" value="1"> 4</label><br>
-                <label><input type="radio" name="q23" value="2"> 6</label><br>
-                <label><input type="radio" name="q23" value="3"> 8</label><br>
-                <label><input type="radio" name="q23" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 24 -->
-        <div class="question">
-            <p>14. Company A has 54 trucks in active service. Company B has only 1/6 as many, and one of these is broken down. How many trucks in active service does Company B have?</p>
-            <div class="options">
-                <label><input type="radio" name="q24" value="1"> 5</label><br>
-                <label><input type="radio" name="q24" value="2"> 6</label><br>
-                <label><input type="radio" name="q24" value="3"> 8</label><br>
-                <label><input type="radio" name="q24" value="4"> 9</label>
-            </div>
-        </div>
-        <!-- Question 25 -->
-        <div class="question">
-            <p>15. If there are 20 cans of beans in a case, and a case costs $1.50, what is the price per can?</p>
-            <div class="options">
-                <label><input type="radio" name="q25" value="1"> 5¼ cents</label><br>
-                <label><input type="radio" name="q25" value="2"> 6½ cents</label><br>
-                <label><input type="radio" name="q25" value="3"> 7½ cents</label><br>
-                <label><input type="radio" name="q25" value="4"> 8¼ cents</label>
-            </div>
-        </div>
-        <!-- Question 26 -->
-        <div class="question">
-            <p>16. What is the average number of rounds of ammunition fired per day if a machine gunner fires 231 rounds in 7 days?</p>
-            <div class="options">
-                <label><input type="radio" name="q26" value="1"> 37</label><br>
-                <label><input type="radio" name="q26" value="2"> 66</label><br>
-                <label><input type="radio" name="q26" value="3"> 33</label><br>
-                <label><input type="radio" name="q26" value="4"> 1617</label>
-            </div>
-        </div>
-        <!-- Question 27 -->
-        <div class="question">
-            <p>17. How many boxes? Note: ALL boxes are the same size within a question.</p>
-            <div class="image-container">
-                <img src="assets/agct1.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q27" value="1"> 5</label><br>
-                <label><input type="radio" name="q27" value="2"> 4</label><br>
-                <label><input type="radio" name="q27" value="3"> 3</label><br>
-                <label><input type="radio" name="q27" value="4"> 6</label>
-            </div>
-        </div>
-        <!-- Question 28 -->
-        <div class="question">
-            <p>18. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct2.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q28" value="1"> 4</label><br>
-                <label><input type="radio" name="q28" value="2"> 5</label><br>
-                <label><input type="radio" name="q28" value="3"> 8</label><br>
-                <label><input type="radio" name="q28" value="4"> 6</label>
-            </div>
-        </div>
-        <!-- Question 29 -->
-        <div class="question">
-            <p>19. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct3.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q29" value="1"> 5</label><br>
-                <label><input type="radio" name="q29" value="2"> 6</label><br>
-                <label><input type="radio" name="q29" value="3"> 8</label><br>
-                <label><input type="radio" name="q29" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 30 -->
-        <div class="question">
-            <p>20. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct4.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q30" value="1"> 6</label><br>
-                <label><input type="radio" name="q30" value="2"> 3</label><br>
-                <label><input type="radio" name="q30" value="3"> 4</label><br>
-                <label><input type="radio" name="q30" value="4"> 5</label>
-            </div>
-        </div>
-        <!-- Question 31 -->
-        <div class="question">
-            <p>21. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct5.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q31" value="1"> 15</label><br>
-                <label><input type="radio" name="q31" value="2"> 17</label><br>
-                <label><input type="radio" name="q31" value="3"> 20</label><br>
-                <label><input type="radio" name="q31" value="4"> 18</label>
-            </div>
-        </div>
-        <!-- Question 32 -->
-        <div class="question">
-            <p>22. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct6.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q32" value="1"> 9</label><br>
-                <label><input type="radio" name="q32" value="2"> 27</label><br>
-                <label><input type="radio" name="q32" value="3"> 18</label><br>
-                <label><input type="radio" name="q32" value="4"> 36</label>
-            </div>
-        </div>
-        <!-- Question 33 -->
-        <div class="question">
-            <p>23. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct7.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q33" value="1"> 5</label><br>
-                <label><input type="radio" name="q33" value="2"> 7</label><br>
-                <label><input type="radio" name="q33" value="3"> 6</label><br>
-                <label><input type="radio" name="q33" value="4"> 8</label>
-            </div>
-        </div>
-        <!-- Question 34 -->
-        <div class="question">
-            <p>24. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct8.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q34" value="1"> 5</label><br>
-                <label><input type="radio" name="q34" value="2"> 7</label><br>
-                <label><input type="radio" name="q34" value="3"> 9</label><br>
-                <label><input type="radio" name="q34" value="4"> 11</label>
-            </div>
-        </div>
-        <!-- Question 35 -->
-        <div class="question">
-            <p>25. One man can IMPAIR the work of a whole squad</p>
-            <div class="options">
-                <label><input type="radio" name="q35" value="1"> spoil</label><br>
-                <label><input type="radio" name="q35" value="2"> replace</label><br>
-                <label><input type="radio" name="q35" value="3"> repair</label><br>
-                <label><input type="radio" name="q35" value="4"> improve</label>
-            </div>
-        </div>
-        <!-- Question 36 -->
-        <div class="question">
-            <p>26. EMPLACEMENTS for the guns were provided</p>
-            <div class="options">
-                <label><input type="radio" name="q36" value="1"> foundations</label><br>
-                <label><input type="radio" name="q36" value="2"> wheels</label><br>
-                <label><input type="radio" name="q36" value="3"> extra parts</label><br>
-                <label><input type="radio" name="q36" value="4"> trucks</label>
-            </div>
-        </div>
-        <!-- Question 37 -->
-        <div class="question">
-            <p>27. The trucks VEERED to the south.</p>
-            <div class="options">
-                <label><input type="radio" name="q37" value="1"> drove</label><br>
-                <label><input type="radio" name="q37" value="2"> turned</label><br>
-                <label><input type="radio" name="q37" value="3"> climbed</label><br>
-                <label><input type="radio" name="q37" value="4"> faced</label>
-            </div>
-        </div>
-        <!-- Question 38 -->
-        <div class="question">
-            <p>28. The soldier's HABILIMENTS were in good order.</p>
-            <div class="options">
-                <label><input type="radio" name="q38" value="1"> papers</label><br>
-                <label><input type="radio" name="q38" value="2"> letters</label><br>
-                <label><input type="radio" name="q38" value="3"> books</label><br>
-                <label><input type="radio" name="q38" value="4"> clothes</label>
-            </div>
-        </div>
-        <!-- Question 39 -->
-        <div class="question">
-            <p>29. The TERRAIN was flat.</p>
-            <div class="options">
-                <label><input type="radio" name="q39" value="1"> ground</label><br>
-                <label><input type="radio" name="q39" value="2"> river bed</label><br>
-                <label><input type="radio" name="q39" value="3"> terrace</label><br>
-                <label><input type="radio" name="q39" value="4"> base</label>
-            </div>
-        </div>
-        <!-- Question 40 -->
-        <div class="question">
-            <p>30. The tank's speed EXCEEDED 30 miles an hour</p>
-            <div class="options">
-                <label><input type="radio" name="q40" value="1"> was more than</label><br>
-                <label><input type="radio" name="q40" value="2"> equalled</label><br>
-                <label><input type="radio" name="q40" value="3"> almost reached</label><br>
-                <label><input type="radio" name="q40" value="4"> was less than</label>
-            </div>
-        </div>
-        <!-- Question 41 -->
-        <div class="question">
-            <p>31. If there are 24 cans of peaches to a case, and a case costs $2.64, what is the price per can?</p>
-            <div class="options">
-                <label><input type="radio" name="q41" value="1"> 10 cents</label><br>
-                <label><input type="radio" name="q41" value="2"> 11 cents</label><br>
-                <label><input type="radio" name="q41" value="3"> 12 cents</label><br>
-                <label><input type="radio" name="q41" value="4"> 13 cents</label>
-            </div>
-        </div>
-        <!-- Question 42 -->
-        <div class="question">
-            <p>32. How many cartridges does a rifleman have in each pile if he sorts 228 cartridges into 3 equal piles?</p>
-            <div class="options">
-                <label><input type="radio" name="q42" value="1"> 76</label><br>
-                <label><input type="radio" name="q42" value="2"> 57</label><br>
-                <label><input type="radio" name="q42" value="3"> 684</label><br>
-                <label><input type="radio" name="q42" value="4"> 77</label>
-            </div>
-        </div>
-        <!-- Question 43 -->
-        <div class="question">
-            <p>33. Private A spends 45 cents a day at the canteen. Private B spends 38 cents a day at the canteen. How much more does A spend than B in a 7-day week?</p>
-            <div class="options">
-                <label><input type="radio" name="q43" value="1"> 35 cents</label><br>
-                <label><input type="radio" name="q43" value="2"> 42 cents</label><br>
-                <label><input type="radio" name="q43" value="3"> 49 cents</label><br>
-                <label><input type="radio" name="q43" value="4"> 56 cents</label>
-            </div>
-        </div>
-        <!-- Question 44 -->
-        <div class="question">
-            <p>34. An airplane was assessed at $4,800. The rate of taxation was $3 per $800. How much were the taxes on the airplane?</p>
-            <div class="options">
-                <label><input type="radio" name="q44" value="1"> $18</label><br>
-                <label><input type="radio" name="q44" value="2"> $17</label><br>
-                <label><input type="radio" name="q44" value="3"> $16</label><br>
-                <label><input type="radio" name="q44" value="4"> $20</label>
-            </div>
-        </div>
-        <!-- Question 45 -->
-        <div class="question">
-            <p>35. The perimeter of the square barracks is 140 feet. What is the length of each side?</p>
-            <div class="options">
-                <label><input type="radio" name="q45" value="1"> 25 feet</label><br>
-                <label><input type="radio" name="q45" value="2"> 45 feet</label><br>
-                <label><input type="radio" name="q45" value="3"> 15 feet</label><br>
-                <label><input type="radio" name="q45" value="4"> 35 feet</label>
-            </div>
-        </div>
-        <!-- Question 46 -->
-        <div class="question">
-            <p>36. How many cubic feet of gunpowder will fill a bin 11 feet long, 7 feet wide, and 6 feet high?</p>
-            <div class="options">
-                <label><input type="radio" name="q46" value="1"> 231</label><br>
-                <label><input type="radio" name="q46" value="2"> 83</label><br>
-                <label><input type="radio" name="q46" value="3"> 462</label><br>
-                <label><input type="radio" name="q46" value="4"> 662</label>
-            </div>
-        </div>
-        <!-- Question 47 -->
-        <div class="question">
-            <p>37. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct9.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q47" value="1"> 4</label><br>
-                <label><input type="radio" name="q47" value="2"> 5</label><br>
-                <label><input type="radio" name="q47" value="3"> 6</label><br>
-                <label><input type="radio" name="q47" value="4"> 7</label>
-            </div>
-        </div>
-        <!-- Question 48 -->
-        <div class="question">
-            <p>38. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct10.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q48" value="1"> 4</label><br>
-                <label><input type="radio" name="q48" value="2"> 10</label><br>
-                <label><input type="radio" name="q48" value="3"> 6</label><br>
-                <label><input type="radio" name="q48" value="4"> 8</label>
-            </div>
-        </div>
-        <!-- Question 49 -->
-        <div class="question">
-            <p>39. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct11.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q49" value="1"> 7</label><br>
-                <label><input type="radio" name="q49" value="2"> 10</label><br>
-                <label><input type="radio" name="q49" value="3"> 14</label><br>
-                <label><input type="radio" name="q49" value="4"> 12</label>
-            </div>
-        </div>
-        <!-- Question 50 -->
-        <div class="question">
-            <p>40. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct12.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q50" value="1"> 4</label><br>
-                <label><input type="radio" name="q50" value="2"> 3</label><br>
-                <label><input type="radio" name="q50" value="3"> 6</label><br>
-                <label><input type="radio" name="q50" value="4"> 5</label>
-            </div>
-        </div>
-        <!-- Question 51 -->
-        <div class="question">
-            <p>41. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct13.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q51" value="1"> 8</label><br>
-                <label><input type="radio" name="q51" value="2"> 9</label><br>
-                <label><input type="radio" name="q51" value="3"> 10</label><br>
-                <label><input type="radio" name="q51" value="4"> 11</label>
-            </div>
-        </div>
-        <!-- Question 52 -->
-        <div class="question">
-            <p>42. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct14.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q52" value="1"> 7</label><br>
-                <label><input type="radio" name="q52" value="2"> 6</label><br>
-                <label><input type="radio" name="q52" value="3"> 8</label><br>
-                <label><input type="radio" name="q52" value="4"> 9</label>
-            </div>
-        </div>
-        <!-- Question 53 -->
-        <div class="question">
-            <p>43. The fortress was ACCESSIBLE</p>
-            <div class="options">
-                <label><input type="radio" name="q53" value="1"> formidable</label><br>
-                <label><input type="radio" name="q53" value="2"> approachable</label><br>
-                <label><input type="radio" name="q53" value="3"> defensible</label><br>
-                <label><input type="radio" name="q53" value="4"> blockaded</label>
-            </div>
-        </div>
-        <!-- Question 54 -->
-        <div class="question">
-            <p>44. A good soldier is one without excessive EGOTISM</p>
-            <div class="options">
-                <label><input type="radio" name="q54" value="1"> weight</label><br>
-                <label><input type="radio" name="q54" value="2"> stature</label><br>
-                <label><input type="radio" name="q54" value="3"> stupidity</label><br>
-                <label><input type="radio" name="q54" value="4"> conceit</label>
-            </div>
-        </div>
-        <!-- Question 55 -->
-        <div class="question">
-            <p>45. A DETONATION was heard.</p>
-            <div class="options">
-                <label><input type="radio" name="q55" value="1"> crash</label><br>
-                <label><input type="radio" name="q55" value="2"> voice</label><br>
-                <label><input type="radio" name="q55" value="3"> explosion</label><br>
-                <label><input type="radio" name="q55" value="4"> wail</label>
-            </div>
-        </div>
-        <!-- Question 56 -->
-        <div class="question">
-            <p>46. The man was MANACLED and taken to the guardhouse</p>
-            <div class="options">
-                <label><input type="radio" name="q56" value="1"> captured</label><br>
-                <label><input type="radio" name="q56" value="2"> questioned</label><br>
-                <label><input type="radio" name="q56" value="3"> handcuffed</label><br>
-                <label><input type="radio" name="q56" value="4"> rebuked</label>
-            </div>
-        </div>
-        <!-- Question 57 -->
-        <div class="question">
-            <p>47. He was UNWAVERING in his loyalty</p>
-            <div class="options">
-                <label><input type="radio" name="q57" value="1"> fickle</label><br>
-                <label><input type="radio" name="q57" value="2"> mistaken</label><br>
-                <label><input type="radio" name="q57" value="3"> steadfast</label><br>
-                <label><input type="radio" name="q57" value="4"> correct</label>
-            </div>
-        </div>
-        <!-- Question 58 -->
-        <div class="question">
-            <p>48. It was the officer's PREROGATIVE to give orders.</p>
-            <div class="options">
-                <label><input type="radio" name="q58" value="1"> right</label><br>
-                <label><input type="radio" name="q58" value="2"> task</label><br>
-                <label><input type="radio" name="q58" value="3"> characteristic</label><br>
-                <label><input type="radio" name="q58" value="4"> habit</label>
-            </div>
-        </div>
-        <!-- Question 59 -->
-        <div class="question">
-            <p>49. The first regiment of Cavalry had 120 horses. The second regiment had only 70 percent as many. How many horses did the second regiment have?</p>
-            <div class="options">
-                <label><input type="radio" name="q59" value="1"> 96</label><br>
-                <label><input type="radio" name="q59" value="2"> 84</label><br>
-                <label><input type="radio" name="q59" value="3"> 75</label><br>
-                <label><input type="radio" name="q59" value="4"> 115</label>
-            </div>
-        </div>
-        <!-- Question 60 -->
-        <div class="question">
-            <p>50. Private Jones spent 1/2 of his allowance on stationery, 1/8 on tobacco, and 1/4 on recreation. He still had $6 left. How much did he have originally?</p>
-            <div class="options">
-                <label><input type="radio" name="q60" value="1"> $48</label><br>
-                <label><input type="radio" name="q60" value="2"> $54</label><br>
-                <label><input type="radio" name="q60" value="3"> $64</label><br>
-                <label><input type="radio" name="q60" value="4"> $72</label>
-            </div>
-        </div>
-        <!-- Question 61 -->
-        <div class="question">
-            <p>51. If 60 automatic rifles cost the same as 2 machine guns, how many automatic rifles can be bought for the price of 5 machine guns?</p>
-            <div class="options">
-                <label><input type="radio" name="q61" value="1"> 300</label><br>
-                <label><input type="radio" name="q61" value="2"> 180</label><br>
-                <label><input type="radio" name="q61" value="3"> 150</label><br>
-                <label><input type="radio" name="q61" value="4"> 120</label>
-            </div>
-        </div>
-        <!-- Question 62 -->
-        <div class="question">
-            <p>52. How many cubic feet of earth must be removed to form a trench 6 feet deep, 5 feet wide, and 200 feet long?</p>
-            <div class="options">
-                <label><input type="radio" name="q62" value="1"> 3,000</label><br>
-                <label><input type="radio" name="q62" value="2"> 6,000</label><br>
-                <label><input type="radio" name="q62" value="3"> 9,000</label><br>
-                <label><input type="radio" name="q62" value="4"> 12,000</label>
-            </div>
-        </div>
-        <!-- Question 63 -->
-        <div class="question">
-            <p>53. If a tank goes 150 feet in 10 seconds, how many feet does it go in 1/5 of a second?</p>
-            <div class="options">
-                <label><input type="radio" name="q63" value="1"> 3</label><br>
-                <label><input type="radio" name="q63" value="2"> 5</label><br>
-                <label><input type="radio" name="q63" value="3"> 6</label><br>
-                <label><input type="radio" name="q63" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 64 -->
-        <div class="question">
-            <p>54. If the concrete curbing and gutter on a street cost $0.65 per running foot, what is the cost for the curbing and gutter on both sides of a road 500 feet long through a camp?</p>
-            <div class="options">
-                <label><input type="radio" name="q64" value="1"> $775</label><br>
-                <label><input type="radio" name="q64" value="2"> $325</label><br>
-                <label><input type="radio" name="q64" value="3"> $650</label><br>
-                <label><input type="radio" name="q64" value="4"> $690</label>
-            </div>
-        </div>
-        <!-- Question 65 -->
-        <div class="question">
-            <p>55. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct15.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q65" value="1"> 7</label><br>
-                <label><input type="radio" name="q65" value="2"> 6</label><br>
-                <label><input type="radio" name="q65" value="3"> 5</label><br>
-                <label><input type="radio" name="q65" value="4"> 4</label>
-            </div>
-        </div>
-        <!-- Question 66 -->
-        <div class="question">
-            <p>56. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct16.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q66" value="1"> 12</label><br>
-                <label><input type="radio" name="q66" value="2"> 7</label><br>
-                <label><input type="radio" name="q66" value="3"> 9</label><br>
-                <label><input type="radio" name="q66" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 67 -->
-        <div class="question">
-            <p>57. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct17.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q67" value="1"> 11</label><br>
-                <label><input type="radio" name="q67" value="2"> 9</label><br>
-                <label><input type="radio" name="q67" value="3"> 15</label><br>
-                <label><input type="radio" name="q67" value="4"> 14</label>
-            </div>
-        </div>
-        <!-- Question 68 -->
-        <div class="question">
-            <p>58. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct18.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q68" value="1"> 5</label><br>
-                <label><input type="radio" name="q68" value="2"> 8</label><br>
-                <label><input type="radio" name="q68" value="3"> 6</label><br>
-                <label><input type="radio" name="q68" value="4"> 7</label>
-            </div>
-        </div>
-        <!-- Question 69 -->
-        <div class="question">
-            <p>59. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct19.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q69" value="1"> 4</label><br>
-                <label><input type="radio" name="q69" value="2"> 5</label><br>
-                <label><input type="radio" name="q69" value="3"> 6</label><br>
-                <label><input type="radio" name="q69" value="4"> 7</label>
-            </div>
-        </div>
-        <!-- Question 70 -->
-        <div class="question">
-            <p>60. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct20.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q70" value="1"> 8</label><br>
-                <label><input type="radio" name="q70" value="2"> 10</label><br>
-                <label><input type="radio" name="q70" value="3"> 9</label><br>
-                <label><input type="radio" name="q70" value="4"> 11</label>
-            </div>
-        </div>
-        <!-- Question 71 -->
-        <div class="question">
-            <p>61. The scout CACHED some food before he left</p>
-            <div class="options">
-                <label><input type="radio" name="q71" value="1"> ate</label><br>
-                <label><input type="radio" name="q71" value="2"> took</label><br>
-                <label><input type="radio" name="q71" value="3"> cooked</label><br>
-                <label><input type="radio" name="q71" value="4"> hid</label>
-            </div>
-        </div>
-        <!-- Question 72 -->
-        <div class="question">
-            <p>62. VISUAL defects are not common among soldiers</p>
-            <div class="options">
-                <label><input type="radio" name="q72" value="1"> hearing</label><br>
-                <label><input type="radio" name="q72" value="2"> observable</label><br>
-                <label><input type="radio" name="q72" value="3"> seeing</label><br>
-                <label><input type="radio" name="q72" value="4"> speech</label>
-            </div>
-        </div>
-        <!-- Question 73 -->
-        <div class="question">
-            <p>63. His high IDEALS made his friends like him.</p>
-            <div class="options">
-                <label><input type="radio" name="q73" value="1"> standards</label><br>
-                <label><input type="radio" name="q73" value="2"> skills</label><br>
-                <label><input type="radio" name="q73" value="3"> hopes</label><br>
-                <label><input type="radio" name="q73" value="4"> thoughts</label>
-            </div>
-        </div>
-        <!-- Question 74 -->
-        <div class="question">
-            <p>64. The bravery of every soldier was MANIFEST</p>
-            <div class="options">
-                <label><input type="radio" name="q74" value="1"> wise</label><br>
-                <label><input type="radio" name="q74" value="2"> evident</label><br>
-                <label><input type="radio" name="q74" value="3"> rewarded</label><br>
-                <label><input type="radio" name="q74" value="4"> fierce</label>
-            </div>
-        </div>
-        <!-- Question 75 -->
-        <div class="question">
-            <p>65. Smith received a COMMENDATION for his marksmanship</p>
-            <div class="options">
-                <label><input type="radio" name="q75" value="1"> compliment</label><br>
-                <label><input type="radio" name="q75" value="2"> reproof</label><br>
-                <label><input type="radio" name="q75" value="3"> punishment</label><br>
-                <label><input type="radio" name="q75" value="4"> grade</label>
-            </div>
-        </div>
-        <!-- Question 76 -->
-        <div class="question">
-            <p>66. The walls of the barracks were CALCIMINED</p>
-            <div class="options">
-                <label><input type="radio" name="q76" value="1"> whitewashed</label><br>
-                <label><input type="radio" name="q76" value="2"> painted</label><br>
-                <label><input type="radio" name="q76" value="3"> weather stripped</label><br>
-                <label><input type="radio" name="q76" value="4"> strengthened</label>
-            </div>
-        </div>
-        <!-- Question 77 -->
-        <div class="question">
-            <p>67. A commission house which had already supplied 2,000 barrels of apples to a cantonment delivered the remainder of its stock to 30 mess halls. Of this remainder each mess hall received 50 barrels. What was the total number of barrels supplied?</p>
-            <div class="options">
-                <label><input type="radio" name="q77" value="1"> 1,500</label><br>
-                <label><input type="radio" name="q77" value="2"> 3,500</label><br>
-                <label><input type="radio" name="q77" value="3"> 6,500</label><br>
-                <label><input type="radio" name="q77" value="4"> 10,000</label>
-            </div>
-        </div>
-        <!-- Question 78 -->
-        <div class="question">
-            <p>68. If a circle has 360 degrees, how many degrees of a circle graph would you shade to show that 20 percent of the men in the Army are officers.</p>
-            <div class="options">
-                <label><input type="radio" name="q78" value="1"> 20</label><br>
-                <label><input type="radio" name="q78" value="2"> 30</label><br>
-                <label><input type="radio" name="q78" value="3"> 36</label><br>
-                <label><input type="radio" name="q78" value="4"> 72</label>
-            </div>
-        </div>
-        <!-- Question 79 -->
-        <div class="question">
-            <p>69. A car which two officers bought cost $350. Officer A paid 3/7 of the amount. How much did Officer B pay?</p>
-            <div class="options">
-                <label><input type="radio" name="q79" value="1"> $150</label><br>
-                <label><input type="radio" name="q79" value="2"> $200</label><br>
-                <label><input type="radio" name="q79" value="3"> $300</label><br>
-                <label><input type="radio" name="q79" value="4"> $250</label>
-            </div>
-        </div>
-        <!-- Question 80 -->
-        <div class="question">
-            <p>70. A scout car goes 40 miles per hour on paved roads, and 25 miles per hour cross-country. How long will it take to cover 200 miles if 1/4 of the way is cross-country?</p>
-            <div class="options">
-                <label><input type="radio" name="q80" value="1"> 2 hours</label><br>
-                <label><input type="radio" name="q80" value="2"> 3¾ hours</label><br>
-                <label><input type="radio" name="q80" value="3"> 5¾ hours</label><br>
-                <label><input type="radio" name="q80" value="4"> 9 hours</label>
-            </div>
-        </div>
-        <!-- Question 81 -->
-        <div class="question">
-            <p>71. If a strip of cloth 30 inches long will shrink to 28 inches when washed, how many inches long will a 75-inch strip be after shrinking?</p>
-            <div class="options">
-                <label><input type="radio" name="q81" value="1"> 70</label><br>
-                <label><input type="radio" name="q81" value="2"> 71</label><br>
-                <label><input type="radio" name="q81" value="3"> 72</label><br>
-                <label><input type="radio" name="q81" value="4"> 73</label>
-            </div>
-        </div>
-        <!-- Question 82 -->
-        <div class="question">
-            <p>72. From four gun squads of 16 men each, 5/8 of the men in one squad are released, as are 1/2 of a second squad, 3/4 of a third squad, and 1/8 of the remaining squad. What fraction of the total number of men have been released?</p>
-            <div class="options">
-                <label><input type="radio" name="q82" value="1"> 1/2</label><br>
-                <label><input type="radio" name="q82" value="2"> 47/64</label><br>
-                <label><input type="radio" name="q82" value="3"> 17/32</label><br>
-                <label><input type="radio" name="q82" value="4"> 3/8</label>
-            </div>
-        </div>
-        <!-- Question 83 -->
-        <div class="question">
-            <p>73. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct21.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q83" value="1"> 9</label><br>
-                <label><input type="radio" name="q83" value="2"> 6</label><br>
-                <label><input type="radio" name="q83" value="3"> 7</label><br>
-                <label><input type="radio" name="q83" value="4"> 8</label>
-            </div>
-        </div>
-        <!-- Question 84 -->
-        <div class="question">
-            <p>74. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct22.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q84" value="1"> 5</label><br>
-                <label><input type="radio" name="q84" value="2"> 4</label><br>
-                <label><input type="radio" name="q84" value="3"> 6</label><br>
-                <label><input type="radio" name="q84" value="4"> 7</label>
-            </div>
-        </div>
-        <!-- Question 85 -->
-        <div class="question">
-            <p>75. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct23.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q85" value="1"> 7</label><br>
-                <label><input type="radio" name="q85" value="2"> 8</label><br>
-                <label><input type="radio" name="q85" value="3"> 9</label><br>
-                <label><input type="radio" name="q85" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 86 -->
-        <div class="question">
-            <p>76. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct24.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q86" value="1"> 8</label><br>
-                <label><input type="radio" name="q86" value="2"> 10</label><br>
-                <label><input type="radio" name="q86" value="3"> 12</label><br>
-                <label><input type="radio" name="q86" value="4"> 6</label>
-            </div>
-        </div>
-        <!-- Question 87 -->
-        <div class="question">
-            <p>77. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct25.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q87" value="1"> 20</label><br>
-                <label><input type="radio" name="q87" value="2"> 15</label><br>
-                <label><input type="radio" name="q87" value="3"> 25</label><br>
-                <label><input type="radio" name="q87" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 88 -->
-        <div class="question">
-            <p>78. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct26.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q88" value="1"> 50</label><br>
-                <label><input type="radio" name="q88" value="2"> 42</label><br>
-                <label><input type="radio" name="q88" value="3"> 48</label><br>
-                <label><input type="radio" name="q88" value="4"> 54</label>
-            </div>
-        </div>
-        <!-- Question 89 -->
-        <div class="question">
-            <p>79. The soldier was INHERENTLY suited to his duties.</p>
-            <div class="options">
-                <label><input type="radio" name="q89" value="1"> naturally</label><br>
-                <label><input type="radio" name="q89" value="2"> certainly</label><br>
-                <label><input type="radio" name="q89" value="3"> completely</label><br>
-                <label><input type="radio" name="q89" value="4"> externally</label>
-            </div>
-        </div>
-        <!-- Question 90 -->
-        <div class="question">
-            <p>80. The IMPACT of the bomb broke many windows.</p>
-            <div class="options">
-                <label><input type="radio" name="q90" value="1"> fragments</label><br>
-                <label><input type="radio" name="q90" value="2"> noise</label><br>
-                <label><input type="radio" name="q90" value="3"> striking</label><br>
-                <label><input type="radio" name="q90" value="4"> weight</label>
-            </div>
-        </div>
-        <!-- Question 91 -->
-        <div class="question">
-            <p>81. The duty was PRIMARILY a military one.</p>
-            <div class="options">
-                <label><input type="radio" name="q91" value="1"> chiefly</label><br>
-                <label><input type="radio" name="q91" value="2"> only</label><br>
-                <label><input type="radio" name="q91" value="3"> definitely</label><br>
-                <label><input type="radio" name="q91" value="4"> usually</label>
-            </div>
-        </div>
-        <!-- Question 92 -->
-        <div class="question">
-            <p>82. His ATTAINMENTS as a gunner were well known.</p>
-            <div class="options">
-                <label><input type="radio" name="q92" value="1"> duties</label><br>
-                <label><input type="radio" name="q92" value="2"> accomplishments</label><br>
-                <label><input type="radio" name="q92" value="3"> experiences</label><br>
-                <label><input type="radio" name="q92" value="4"> lessons</label>
-            </div>
-        </div>
-        <!-- Question 93 -->
-        <div class="question">
-            <p>83. His job was to SYNCRHONIZE the firing of the guns.</p>
-            <div class="options">
-                <label><input type="radio" name="q93" value="1"> count</label><br>
-                <label><input type="radio" name="q93" value="2"> coordinate</label><br>
-                <label><input type="radio" name="q93" value="3"> order</label><br>
-                <label><input type="radio" name="q93" value="4"> simplify</label>
-            </div>
-        </div>
-        <!-- Question 94 -->
-        <div class="question">
-            <p>84. The camp ABUTS ON the highway.</p>
-            <div class="options">
-                <label><input type="radio" name="q94" value="1"> opens up</label><br>
-                <label><input type="radio" name="q94" value="2"> borders on</label><br>
-                <label><input type="radio" name="q94" value="3"> ends on</label><br>
-                <label><input type="radio" name="q94" value="4"> is seen from</label>
-            </div>
-        </div>
-        <!-- Question 95 -->
-        <div class="question">
-            <p>85. At a certain Army post there are 2,160 men. Of these people 1/2 are in the Engineer school, 1/3 in the Chemical Warfare School, 1/9 in the Quartermaster School, and the rest in the Infantry School. How many men are there in the Infantry School?</p>
-            <div class="options">
-                <label><input type="radio" name="q95" value="1"> 160</label><br>
-                <label><input type="radio" name="q95" value="2"> 180</label><br>
-                <label><input type="radio" name="q95" value="3"> 120</label><br>
-                <label><input type="radio" name="q95" value="4"> 240</label>
-            </div>
-        </div>
-        <!-- Question 96 -->
-        <div class="question">
-            <p>86. If a scout car goes 300 feet in 15 seconds, how many feet does it go in 1/5 of a second?</p>
-            <div class="options">
-                <label><input type="radio" name="q96" value="1"> 4</label><br>
-                <label><input type="radio" name="q96" value="2"> 5</label><br>
-                <label><input type="radio" name="q96" value="3"> 6</label><br>
-                <label><input type="radio" name="q96" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 97 -->
-        <div class="question">
-            <p>87. In a certain Army post there are 10,000 men, 8 percent of whom are commissioned officers. Of the commissioned officers, 60 percent are regular officers, the rest reserve officers. How many reserve officers are there in the post?</p>
-            <div class="options">
-                <label><input type="radio" name="q97" value="1"> 600</label><br>
-                <label><input type="radio" name="q97" value="2"> 480</label><br>
-                <label><input type="radio" name="q97" value="3"> 320</label><br>
-                <label><input type="radio" name="q97" value="4"> 400</label>
-            </div>
-        </div>
-        <!-- Question 98 -->
-        <div class="question">
-            <p>88. How much would you have left if from 11 yards 2 feet 9 inches away you took away 7 yards 2 feet 11 inches? Note: 1 yard = 3 feet, 1 foot = 12 inch</p>
-            <div class="options">
-                <label><input type="radio" name="q98" value="1"> 3 yards 2 inches</label><br>
-                <label><input type="radio" name="q98" value="2"> 4 yards 2 inches</label><br>
-                <label><input type="radio" name="q98" value="3"> 3 yards 2 feet 10 inches</label><br>
-                <label><input type="radio" name="q98" value="4"> 4 yards 4 feet 2 inches</label>
-            </div>
-        </div>
-        <!-- Question 99 -->
-        <div class="question">
-            <p>89. If a replacement center is 20 percent full and is accommodating 2,500 men, how many men can be accommodated when it is filled to capacity?</p>
-            <div class="options">
-                <label><input type="radio" name="q99" value="1"> 125,500</label><br>
-                <label><input type="radio" name="q99" value="2"> 12,500</label><br>
-                <label><input type="radio" name="q99" value="3"> 50,000</label><br>
-                <label><input type="radio" name="q99" value="4"> 10,000</label>
-            </div>
-        </div>
-        <!-- Question 100 -->
-        <div class="question">
-            <p>90. At a certain Army post there are 1,500 men. Of these 400 are in the Engineer School, 400 in the Chemical Warfare School, and 250 in the Quartermaster School. The rest of the men are in the Infantry School. What fraction of the men is in the Infantry School?</p>
-            <div class="options">
-                <label><input type="radio" name="q100" value="1"> 1/6</label><br>
-                <label><input type="radio" name="q100" value="2"> 2/9</label><br>
-                <label><input type="radio" name="q100" value="3"> 3/10</label><br>
-                <label><input type="radio" name="q100" value="4"> 1/3</label>
-            </div>
-        </div>
-        <!-- Question 101 -->
-        <div class="question">
-            <p>91. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct27.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q101" value="1"> 9</label><br>
-                <label><input type="radio" name="q101" value="2"> 7</label><br>
-                <label><input type="radio" name="q101" value="3"> 8</label><br>
-                <label><input type="radio" name="q101" value="4"> 6</label>
-            </div>
-        </div>
-        <!-- Question 102 -->
-        <div class="question">
-            <p>92. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct28.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q102" value="1"> 9</label><br>
-                <label><input type="radio" name="q102" value="2"> 5</label><br>
-                <label><input type="radio" name="q102" value="3"> 10</label><br>
-                <label><input type="radio" name="q102" value="4"> 7</label>
-            </div>
-        </div>
-        <!-- Question 103 -->
-        <div class="question">
-            <p>93. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct29.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q103" value="1"> 6</label><br>
-                <label><input type="radio" name="q103" value="2"> 8</label><br>
-                <label><input type="radio" name="q103" value="3"> 5</label><br>
-                <label><input type="radio" name="q103" value="4"> 7</label>
-            </div>
-        </div>
-        <!-- Question 104 -->
-        <div class="question">
-            <p>94. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct30.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q104" value="1"> 8</label><br>
-                <label><input type="radio" name="q104" value="2"> 10</label><br>
-                <label><input type="radio" name="q104" value="3"> 6</label><br>
-                <label><input type="radio" name="q104" value="4"> 12</label>
-            </div>
-        </div>
-        <!-- Question 105 -->
-        <div class="question">
-            <p>95. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct31.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q105" value="1"> 7</label><br>
-                <label><input type="radio" name="q105" value="2"> 8</label><br>
-                <label><input type="radio" name="q105" value="3"> 9</label><br>
-                <label><input type="radio" name="q105" value="4"> 6</label>
-            </div>
-        </div>
-        <!-- Question 106 -->
-        <div class="question">
-            <p>96. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct32.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q106" value="1"> 11</label><br>
-                <label><input type="radio" name="q106" value="2"> 10</label><br>
-                <label><input type="radio" name="q106" value="3"> 6</label><br>
-                <label><input type="radio" name="q106" value="4"> 12</label>
-            </div>
-        </div>
-        <!-- Question 107 -->
-        <div class="question">
-            <p>97. The weight of the gun RESTRICTS its use.</p>
-            <div class="options">
-                <label><input type="radio" name="q107" value="1"> limits</label><br>
-                <label><input type="radio" name="q107" value="2"> allows</label><br>
-                <label><input type="radio" name="q107" value="3"> eliminates</label><br>
-                <label><input type="radio" name="q107" value="4"> insures</label>
-            </div>
-        </div>
-        <!-- Question 108 -->
-        <div class="question">
-            <p>98. The officer was well known for his successful PROGNOSTICATIONS.</p>
-            <div class="options">
-                <label><input type="radio" name="q108" value="1"> lies</label><br>
-                <label><input type="radio" name="q108" value="2"> attacks</label><br>
-                <label><input type="radio" name="q108" value="3"> predictions</label><br>
-                <label><input type="radio" name="q108" value="4"> deeds</label>
-            </div>
-        </div>
-        <!-- Question 109 -->
-        <div class="question">
-            <p>99. Prive Smith's reputation was VINDICATED</p>
-            <div class="options">
-                <label><input type="radio" name="q109" value="1"> doubted</label><br>
-                <label><input type="radio" name="q109" value="2"> cleared</label><br>
-                <label><input type="radio" name="q109" value="3"> known</label><br>
-                <label><input type="radio" name="q109" value="4"> lost</label>
-            </div>
-        </div>
-        <!-- Question 110 -->
-        <div class="question">
-            <p>100. Private Jones found Army life ABSORBING</p>
-            <div class="options">
-                <label><input type="radio" name="q110" value="1"> engrossing</label><br>
-                <label><input type="radio" name="q110" value="2"> boring</label><br>
-                <label><input type="radio" name="q110" value="3"> different</label><br>
-                <label><input type="radio" name="q110" value="4"> stimulating</label>
-            </div>
-        </div>
-        <!-- Question 111 -->
-        <div class="question">
-            <p>101. The tactics of the troops were DECEPTIVE</p>
-            <div class="options">
-                <label><input type="radio" name="q111" value="1"> delusive</label><br>
-                <label><input type="radio" name="q111" value="2"> speedy</label><br>
-                <label><input type="radio" name="q111" value="3"> invisible</label><br>
-                <label><input type="radio" name="q111" value="4"> fatiguing</label>
-            </div>
-        </div>
-        <!-- Question 112 -->
-        <div class="question">
-            <p>102. The original message from the signalman was FALLACIOUS</p>
-            <div class="options">
-                <label><input type="radio" name="q112" value="1"> faltering</label><br>
-                <label><input type="radio" name="q112" value="2"> stopped</label><br>
-                <label><input type="radio" name="q112" value="3"> false</label><br>
-                <label><input type="radio" name="q112" value="4"> misunderstood</label>
-            </div>
-        </div>
-        <!-- Question 113 -->
-        <div class="question">
-            <p>103. A truck goes 6 miles per hour when traveling uphill, and 27 miles per hour when going downhill. How long will it take to go 90 miles if 2/5 of the way is uphill?</p>
-            <div class="options">
-                <label><input type="radio" name="q113" value="1"> 5⅔ hours</label><br>
-                <label><input type="radio" name="q113" value="2"> 8 hours</label><br>
-                <label><input type="radio" name="q113" value="3"> 8¼ hours</label><br>
-                <label><input type="radio" name="q113" value="4"> 10⅓ hours</label>
-            </div>
-        </div>
-        <!-- Question 114 -->
-        <div class="question">
-            <p>104. A soldier spent 1/10 of his money for cigarettes and 5 times as much for postage stamps. he then had $0.52 left. How much money did he have originally?</p>
-            <div class="options">
-                <label><input type="radio" name="q114" value="1"> $1.30</label><br>
-                <label><input type="radio" name="q114" value="2"> $1.40</label><br>
-                <label><input type="radio" name="q114" value="3"> $1.50</label><br>
-                <label><input type="radio" name="q114" value="4"> $1.60</label>
-            </div>
-        </div>
-        <!-- Question 115 -->
-        <div class="question">
-            <p>105. A barracks room 20 feet by 17 feet has a rug 15 feet by 10 feet. The space around the rug has an area of how many square feet?</p>
-            <div class="options">
-                <label><input type="radio" name="q115" value="1"> 150</label><br>
-                <label><input type="radio" name="q115" value="2"> 135</label><br>
-                <label><input type="radio" name="q115" value="3"> 190</label><br>
-                <label><input type="radio" name="q115" value="4"> 199</label>
-            </div>
-        </div>
-        <!-- Question 116 -->
-        <div class="question">
-            <p>106. If it takes 12 men 5 hours to dig a trench, how many men are needed to dig it in 2 hours?</p>
-            <div class="options">
-                <label><input type="radio" name="q116" value="1"> 20</label><br>
-                <label><input type="radio" name="q116" value="2"> 24</label><br>
-                <label><input type="radio" name="q116" value="3"> 26</label><br>
-                <label><input type="radio" name="q116" value="4"> 30</label>
-            </div>
-        </div>
-        <!-- Question 117 -->
-        <div class="question">
-            <p>107. An armored car travels at the rate of 50 miles per hour on paved roads. It takes 4 hours to make a trip of 150 miles, 2/3 of which was on paved roads and the rest on unpaved roads. How fast (miles per hour) did the car travel on unpaved roads?</p>
-            <div class="options">
-                <label><input type="radio" name="q117" value="1"> 12½</label><br>
-                <label><input type="radio" name="q117" value="2"> 25</label><br>
-                <label><input type="radio" name="q117" value="3"> 30</label><br>
-                <label><input type="radio" name="q117" value="4"> 37½</label>
-            </div>
-        </div>
-        <!-- Question 118 -->
-        <div class="question">
-            <p>108. In digging a trench 800 yards long, two crews of workers started at opposite ends and worked toward the center. When the trench was completed, one of the crews had dug only 7/9 as much as the other. How much of the trench was dug by the faster crew?</p>
-            <div class="options">
-                <label><input type="radio" name="q118" value="1"> 350 yards</label><br>
-                <label><input type="radio" name="q118" value="2"> 375 yards</label><br>
-                <label><input type="radio" name="q118" value="3"> 410 yards</label><br>
-                <label><input type="radio" name="q118" value="4"> 450 yards</label>
-            </div>
-        </div>
-        <!-- Question 119 -->
-        <div class="question">
-            <p>109. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct33.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q119" value="1"> 8</label><br>
-                <label><input type="radio" name="q119" value="2"> 9</label><br>
-                <label><input type="radio" name="q119" value="3"> 6</label><br>
-                <label><input type="radio" name="q119" value="4"> 11</label>
-            </div>
-        </div>
-        <!-- Question 120 -->
-        <div class="question">
-            <p>110. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct34.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q120" value="1"> 9</label><br>
-                <label><input type="radio" name="q120" value="2"> 10</label><br>
-                <label><input type="radio" name="q120" value="3"> 12</label><br>
-                <label><input type="radio" name="q120" value="4"> 13</label>
-            </div>
-        </div>
-        <!-- Question 121 -->
-        <div class="question">
-            <p>111. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct35.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q121" value="1"> 6</label><br>
-                <label><input type="radio" name="q121" value="2"> 8</label><br>
-                <label><input type="radio" name="q121" value="3"> 7</label><br>
-                <label><input type="radio" name="q121" value="4"> 9</label>
-            </div>
-        </div>
-        <!-- Question 122 -->
-        <div class="question">
-            <p>112. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct36.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q122" value="1"> 14</label><br>
-                <label><input type="radio" name="q122" value="2"> 12</label><br>
-                <label><input type="radio" name="q122" value="3"> 13</label><br>
-                <label><input type="radio" name="q122" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 123 -->
-        <div class="question">
-            <p>113. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct37.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q123" value="1"> 8</label><br>
-                <label><input type="radio" name="q123" value="2"> 10</label><br>
-                <label><input type="radio" name="q123" value="3"> 9</label><br>
-                <label><input type="radio" name="q123" value="4"> 11</label>
-            </div>
-        </div>
-        <!-- Question 124 -->
-        <div class="question">
-            <p>114. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct38.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q124" value="1"> 9</label><br>
-                <label><input type="radio" name="q124" value="2"> 8</label><br>
-                <label><input type="radio" name="q124" value="3"> 10</label><br>
-                <label><input type="radio" name="q124" value="4"> 11</label>
-            </div>
-        </div>
-        <!-- Question 125 -->
-        <div class="question">
-            <p>115. The platoon was DEPLOYED</p>
-            <div class="options">
-                <label><input type="radio" name="q125" value="1"> in a single file</label><br>
-                <label><input type="radio" name="q125" value="2"> under cover</label><br>
-                <label><input type="radio" name="q125" value="3"> at work</label><br>
-                <label><input type="radio" name="q125" value="4"> spread out</label>
-            </div>
-        </div>
-        <!-- Question 126 -->
-        <div class="question">
-            <p>116. There was a sudden CESSATION of firing</p>
-            <div class="options">
-                <label><input type="radio" name="q126" value="1"> stopping</label><br>
-                <label><input type="radio" name="q126" value="2"> renewal</label><br>
-                <label><input type="radio" name="q126" value="3"> burst</label><br>
-                <label><input type="radio" name="q126" value="4"> decrease</label>
-            </div>
-        </div>
-        <!-- Question 127 -->
-        <div class="question">
-            <p>117. The sergeant had a STENTORIAN voice</p>
-            <div class="options">
-                <label><input type="radio" name="q127" value="1"> low</label><br>
-                <label><input type="radio" name="q127" value="2"> gruff</label><br>
-                <label><input type="radio" name="q127" value="3"> loud</label><br>
-                <label><input type="radio" name="q127" value="4"> tenor</label>
-            </div>
-        </div>
-        <!-- Question 128 -->
-        <div class="question">
-            <p>118. Bad weather AFFECTS airplane speeds</p>
-            <div class="options">
-                <label><input type="radio" name="q128" value="1"> reduces</label><br>
-                <label><input type="radio" name="q128" value="2"> increases</label><br>
-                <label><input type="radio" name="q128" value="3"> causes</label><br>
-                <label><input type="radio" name="q128" value="4"> influences</label>
-            </div>
-        </div>
-        <!-- Question 129 -->
-        <div class="question">
-            <p>119. The officer ABROGATED the order</p>
-            <div class="options">
-                <label><input type="radio" name="q129" value="1"> repeated</label><br>
-                <label><input type="radio" name="q129" value="2"> revoked</label><br>
-                <label><input type="radio" name="q129" value="3"> issued</label><br>
-                <label><input type="radio" name="q129" value="4"> explained</label>
-            </div>
-        </div>
-        <!-- Question 130 -->
-        <div class="question">
-            <p>120. The scouts found a WEIR across the stream.</p>
-            <div class="options">
-                <label><input type="radio" name="q130" value="1"> bridge</label><br>
-                <label><input type="radio" name="q130" value="2"> dam</label><br>
-                <label><input type="radio" name="q130" value="3"> pontoon</label><br>
-                <label><input type="radio" name="q130" value="4"> ford</label>
-            </div>
-        </div>
-        <!-- Question 131 -->
-        <div class="question">
-            <p>121. A staff sergeant is instructed to travel from A to B, a distance of 450 miles. He goes by railroad for 3/5 of the way at an average speed of 50 miles per hour. The rest of the trip he goes by automobile for 30 miles per hour. Allowing 6 minutes for the transfer, how long did the trip take?</p>
-            <div class="options">
-                <label><input type="radio" name="q131" value="1"> 11.4 hours</label><br>
-                <label><input type="radio" name="q131" value="2"> 11.5 hours</label><br>
-                <label><input type="radio" name="q131" value="3"> 12.6 hours</label><br>
-                <label><input type="radio" name="q131" value="4"> 12.7 hours</label>
-            </div>
-        </div>
-        <!-- Question 132 -->
-        <div class="question">
-            <p>122. How many minutes will it take to fill a tank by three pipes running simultaneously if each pipe running alone can fill the tank in 30 minutes, 45 minutes, and 90 minutes respectively?</p>
-            <div class="options">
-                <label><input type="radio" name="q132" value="1"> 4</label><br>
-                <label><input type="radio" name="q132" value="2"> 6⅔</label><br>
-                <label><input type="radio" name="q132" value="3"> 15</label><br>
-                <label><input type="radio" name="q132" value="4"> 30</label>
-            </div>
-        </div>
-        <!-- Question 133 -->
-        <div class="question">
-            <p>123. What will be the length of a camouflage area which is to cover 50,000 square feet of ground and is to be 5 times as long as it is wide?</p>
-            <div class="options">
-                <label><input type="radio" name="q133" value="1"> 400 feet</label><br>
-                <label><input type="radio" name="q133" value="2"> 500 feet</label><br>
-                <label><input type="radio" name="q133" value="3"> 600 feet</label><br>
-                <label><input type="radio" name="q133" value="4"> 5,000 feet</label>
-            </div>
-        </div>
-        <!-- Question 134 -->
-        <div class="question">
-            <p>124. If cavalry post has enough oats to last 45 horses 144 days. how many days will the oats last 20 horses?</p>
-            <div class="options">
-                <label><input type="radio" name="q134" value="1"> 324</label><br>
-                <label><input type="radio" name="q134" value="2"> 208</label><br>
-                <label><input type="radio" name="q134" value="3"> 479</label><br>
-                <label><input type="radio" name="q134" value="4"> 300</label>
-            </div>
-        </div>
-        <!-- Question 135 -->
-        <div class="question">
-            <p>125. Camp A has 3 times as many men as Camp B. Camp C has 5 times as many men as Camp B. Camp C has how many times as many men as Camp A?</p>
-            <div class="options">
-                <label><input type="radio" name="q135" value="1"> 3/5</label><br>
-                <label><input type="radio" name="q135" value="2"> 1⅔</label><br>
-                <label><input type="radio" name="q135" value="3"> 8</label><br>
-                <label><input type="radio" name="q135" value="4"> 15</label>
-            </div>
-        </div>
-        <!-- Question 136 -->
-        <div class="question">
-            <p>126. it takes 8 minutes for a tractor to travel 1 mile. The average speed of a motorcycle is 4 times that of a tractor. What is the speed of the motorcycle in miles per hour?</p>
-            <div class="options">
-                <label><input type="radio" name="q136" value="1"> 22</label><br>
-                <label><input type="radio" name="q136" value="2"> 30</label><br>
-                <label><input type="radio" name="q136" value="3"> 32</label><br>
-                <label><input type="radio" name="q136" value="4"> 40</label>
-            </div>
-        </div>
-        <!-- Question 137 -->
-        <div class="question">
-            <p>127. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct39.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q137" value="1"> 10</label><br>
-                <label><input type="radio" name="q137" value="2"> 12</label><br>
-                <label><input type="radio" name="q137" value="3"> 11</label><br>
-                <label><input type="radio" name="q137" value="4"> 13</label>
-            </div>
-        </div>
-        <!-- Question 138 -->
-        <div class="question">
-            <p>128. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct40.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q138" value="1"> 9</label><br>
-                <label><input type="radio" name="q138" value="2"> 7</label><br>
-                <label><input type="radio" name="q138" value="3"> 10</label><br>
-                <label><input type="radio" name="q138" value="4"> 8</label>
-            </div>
-        </div>
-        <!-- Question 139 -->
-        <div class="question">
-            <p>129. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct41.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q139" value="1"> 9</label><br>
-                <label><input type="radio" name="q139" value="2"> 10</label><br>
-                <label><input type="radio" name="q139" value="3"> 11</label><br>
-                <label><input type="radio" name="q139" value="4"> 12</label>
-            </div>
-        </div>
-        <!-- Question 140 -->
-        <div class="question">
-            <p>130. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct42.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q140" value="1"> 9</label><br>
-                <label><input type="radio" name="q140" value="2"> 12</label><br>
-                <label><input type="radio" name="q140" value="3"> 11</label><br>
-                <label><input type="radio" name="q140" value="4"> 10</label>
-            </div>
-        </div>
-        <!-- Question 141 -->
-        <div class="question">
-            <p>131. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct43.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q141" value="1"> 10</label><br>
-                <label><input type="radio" name="q141" value="2"> 11</label><br>
-                <label><input type="radio" name="q141" value="3"> 12</label><br>
-                <label><input type="radio" name="q141" value="4"> 13</label>
-            </div>
-        </div>
-        <!-- Question 142 -->
-        <div class="question">
-            <p>132. How many boxes?</p>
-            <div class="image-container">
-                <img src="assets/agct44.jpg" alt="How many boxes?">
-            <div class="options">
-                <label><input type="radio" name="q142" value="1"> 10</label><br>
-                <label><input type="radio" name="q142" value="2"> 11</label><br>
-                <label><input type="radio" name="q142" value="3"> 13</label><br>
-                <label><input type="radio" name="q142" value="4"> 14</label>
-            </div>
-        </div>
-        <!-- Question 143 -->
-        <div class="question">
-            <p>133. The officer INSTILLED confidence.</p>
-            <div class="options">
-                <label><input type="radio" name="q143" value="1"> needed</label><br>
-                <label><input type="radio" name="q143" value="2"> developed</label><br>
-                <label><input type="radio" name="q143" value="3"> imparted</label><br>
-                <label><input type="radio" name="q143" value="4"> possessed</label>
-            </div>
-        </div>
-        <!-- Question 144 -->
-        <div class="question">
-            <p>134. A HALCYON atmosphere pervaded the camp.</p>
-            <div class="options">
-                <label><input type="radio" name="q144" value="1"> riotous</label><br>
-                <label><input type="radio" name="q144" value="2"> quiet</label><br>
-                <label><input type="radio" name="q144" value="3"> stormy</label><br>
-                <label><input type="radio" name="q144" value="4"> happy</label>
-            </div>
-        </div>
-        <!-- Question 145 -->
-        <div class="question">
-            <p>135. He had A SUPERFICIAL knowledge of regulations.</p>
-            <div class="options">
-                <label><input type="radio" name="q145" value="1"> an excellent</label><br>
-                <label><input type="radio" name="q145" value="2"> a broad</label><br>
-                <label><input type="radio" name="q145" value="3"> a superior</label><br>
-                <label><input type="radio" name="q145" value="4"> a shallow</label>
-            </div>
-        </div>
-        <!-- Question 146 -->
-        <div class="question">
-            <p>136. Camp A has twice as many men as Camp B, and Camp C has 7 times as many men as Camp B. Camp A has how many times as many men as Camp C?</p>
-            <div class="options">
-                <label><input type="radio" name="q146" value="1"> 2/7</label><br>
-                <label><input type="radio" name="q146" value="2"> 3½</label><br>
-                <label><input type="radio" name="q146" value="3"> 5</label><br>
-                <label><input type="radio" name="q146" value="4"> 14</label>
-            </div>
-        </div>
-        <!-- Question 147 -->
-        <div class="question">
-            <p>137. The sum of three angles of a triangle is 180 degrees. The angles are to each other as 1 : 3 : 5. What is the largest angle of the triangle?</p>
-            <div class="options">
-                <label><input type="radio" name="q147" value="1"> 80 degrees</label><br>
-                <label><input type="radio" name="q147" value="2"> 90 degrees</label><br>
-                <label><input type="radio" name="q147" value="3"> 100 degrees</label><br>
-                <label><input type="radio" name="q147" value="4"> 120 degrees</label>
-            </div>
-        </div>
-        <!-- Question 148 -->
-        <div class="question">
-            <p>138. In a regiment of 1,800 men there are 144 corporals. If it is desired that 1 man in every 10 have the rank of corporal, what percentage of the regiment must be promoted to fill the vacancies?</p>
-            <div class="options">
-                <label><input type="radio" name="q148" value="1"> 2.3</label><br>
-                <label><input type="radio" name="q148" value="2"> 3.6</label><br>
-                <label><input type="radio" name="q148" value="3"> 4</label><br>
-                <label><input type="radio" name="q148" value="4"> 2</label>
-            </div>
-        </div>
-        <!-- Question 149 -->
-        <div class="question">
-            <p>139. What is the area in square inches of a certain target, rectangular in shape, which is 8 inches long and has a diagonal of 10 inches?</p>
-            <div class="options">
-                <label><input type="radio" name="q149" value="1"> 16</label><br>
-                <label><input type="radio" name="q149" value="2"> 40</label><br>
-                <label><input type="radio" name="q149" value="3"> 48</label><br>
-                <label><input type="radio" name="q149" value="4"> 80</label>
-            </div>
-        </div>
-        <!-- Question 150 -->
-        <div class="question">
-            <p>140. The clerk at headquarter can type 60 words a minute. How long will it take him to type 10 letters, 5 of which consist of 480 words each, the other 5 of 600 words each?</p>
-            <div class="options">
-                <label><input type="radio" name="q150" value="1"> 50 minutes</label><br>
-                <label><input type="radio" name="q150" value="2"> 1 hour 20 minutes</label><br>
-                <label><input type="radio" name="q150" value="3"> 1 hour 30 minutes</label><br>
-                <label><input type="radio" name="q150" value="4"> 2 hours 15 minutes</label>
-            </div>
-        </div>
-        <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+        <!-- Pregunta 1 -->
+        <div class="question"><p>1. La organización de equipos **FOMENTA** el interés en los juegos</p><div class="options"><label><input type="radio" name="q11" value="1"> arruina</label><br><label><input type="radio" name="q11" value="2"> cambia</label><br><label><input type="radio" name="q11" value="3"> desarrolla</label><br><label><input type="radio" name="q11" value="4"> detiene</label></div></div>
+        <!-- Pregunta 2 -->
+        <div class="question"><p>2. El capitán dio una descripción **VÍVIDA** del campamento</p><div class="options"><label><input type="radio" name="q12" value="1"> verdadera</label><br><label><input type="radio" name="q12" value="2"> clara</label><br><label><input type="radio" name="q12" value="3"> larga</label><br><label><input type="radio" name="q12" value="4"> corta</label></div></div>
+        <!-- Pregunta 3 -->
+        <div class="question"><p>3. La nueva mira de bombas es muy **EFICAZ**</p><div class="options"><label><input type="radio" name="q13" value="1"> importante</label><br><label><input type="radio" name="q13" value="2"> deseable</label><br><label><input type="radio" name="q13" value="3"> efectiva</label><br><label><input type="radio" name="q13" value="4"> simple</label></div></div>
+        <!-- Pregunta 4 -->
+        <div class="question"><p>4. Los hombres fueron **REUNIDOS** en el comedor</p><div class="options"><label><input type="radio" name="q14" value="1"> comiendo</label><br><label><input type="radio" name="q14" value="2"> alojados</label><br><label><input type="radio" name="q14" value="3"> jugando</label><br><label><input type="radio" name="q14" value="4"> congregados</label></div></div>
+        <!-- Pregunta 5 -->
+        <div class="question"><p>5. El arma más pequeña era **PREFERIBLE**</p><div class="options"><label><input type="radio" name="q15" value="1"> ligera</label><br><label><input type="radio" name="q15" value="2"> más deseable</label><br><label><input type="radio" name="q15" value="3"> vieja</label><br><label><input type="radio" name="q15" value="4"> más precisa</label></div></div>
+        <!-- Pregunta 6 -->
+        <div class="question"><p>6. La **ADMINISTRACIÓN** del campamento está a cargo de los oficiales</p><div class="options"><label><input type="radio" name="q16" value="1"> construcción</label><br><label><input type="radio" name="q16" value="2"> acción</label><br><label><input type="radio" name="q16" value="3"> servicio</label><br><label><input type="radio" name="q16" value="4"> gestión</label></div></div>
+        <!-- Pregunta 7 -->
+        <div class="question"><p>7. La compañía **RESISTIÓ** el fuego de fusilería</p><div class="options"><label><input type="radio" name="q17" value="1"> se retiró de</label><br><label><input type="radio" name="q17" value="2"> se opuso exitosamente</label><br><label><input type="radio" name="q17" value="3"> avanzó hacia</label><br><label><input type="radio" name="q17" value="4"> fue derrotada por</label></div></div>
+        <!-- Pregunta 8 -->
+        <div class="question"><p>8. Los cañones grandes fueron **UTILIZADOS** en el ataque</p><div class="options"><label><input type="radio" name="q18" value="1"> abandonados</label><br><label><input type="radio" name="q18" value="2"> inútiles</label><br><label><input type="radio" name="q18" value="3"> utilizados</label><br><label><input type="radio" name="q18" value="4"> movidos</label></div></div>
+        <!-- Pregunta 9 -->
+        <div class="question"><p>9. ¿Con cuál puede el Sargento Jones comprar más? (Un centavo es 1 céntimo, una moneda de 5 es 5 céntimos, una de 10 es 10 céntimos y una de 25 es 25 céntimos)</p><div class="options"><label><input type="radio" name="q19" value="1"> 3 de 10 y 2 de 5</label><br><label><input type="radio" name="q19" value="2"> 5 de 10</label><br><label><input type="radio" name="q19" value="3"> 1 de 25, 1 de 10 y 4 de 5</label><br><label><input type="radio" name="q19" value="4"> 3 de 10, 3 de 5 y 4 centavos</label></div></div>
+        <!-- Pregunta 10 -->
+        <div class="question"><p>10. ¿Cuántos cartuchos le quedan a un soldado si tiene 41 cartuchos y usa 2 docenas?</p><div class="options"><label><input type="radio" name="q20" value="1"> 21</label><br><label><input type="radio" name="q20" value="2"> 17</label><br><label><input type="radio" name="q20" value="3"> 65</label><br><label><input type="radio" name="q20" value="4"> 39</label></div></div>
+        <!-- Pregunta 11 -->
+        <div class="question"><p>11. El soldado Black tenía 26 cartuchos, el soldado Green tenía 3 veces más que Black, y el soldado Brown tenía 19 menos que Green. ¿Cuántos tenía Brown?</p><div class="options"><label><input type="radio" name="q21" value="1"> 49</label><br><label><input type="radio" name="q21" value="2"> 51</label><br><label><input type="radio" name="q21" value="3"> 59</label><br><label><input type="radio" name="q21" value="4"> 69</label></div></div>
+        <!-- Pregunta 12 -->
+        <div class="question"><p>12. El costo para el ejército de instalar un vidrio nuevo es de 75 céntimos. Si el vidrio cuesta 23 céntimos y la masilla 2 céntimos, ¿cuánto cuesta la mano de obra?</p><div class="options"><label><input type="radio" name="q22" value="1"> 35 céntimos</label><br><label><input type="radio" name="q22" value="2"> 50 céntimos</label><br><label><input type="radio" name="q22" value="3"> 40 céntimos</label><br><label><input type="radio" name="q22" value="4"> 25 céntimos</label></div></div>
+        <!-- Pregunta 13 -->
+        <div class="question"><p>13. El soldado Billings compró libros por $9 y los vendió por $10, ganando $0.25 por libro. ¿Cuántos libros había?</p><div class="options"><label><input type="radio" name="q23" value="1"> 4</label><br><label><input type="radio" name="q23" value="2"> 6</label><br><label><input type="radio" name="q23" value="3"> 8</label><br><label><input type="radio" name="q23" value="4"> 10</label></div></div>
+        <!-- Pregunta 14 -->
+        <div class="question"><p>14. La Compañía A tiene 54 camiones en servicio. La Compañía B tiene 1/6 de esa cantidad, y uno está averiado. ¿Cuántos camiones activos tiene B?</p><div class="options"><label><input type="radio" name="q24" value="1"> 5</label><br><label><input type="radio" name="q24" value="2"> 6</label><br><label><input type="radio" name="q24" value="3"> 8</label><br><label><input type="radio" name="q24" value="4"> 9</label></div></div>
+        <!-- Pregunta 15 -->
+        <div class="question"><p>15. Si hay 20 latas de frijoles en una caja que cuesta $1.50, ¿cuál es el precio por lata?</p><div class="options"><label><input type="radio" name="q25" value="1"> 5¼ céntimos</label><br><label><input type="radio" name="q25" value="2"> 6½ céntimos</label><br><label><input type="radio" name="q25" value="3"> 7½ céntimos</label><br><label><input type="radio" name="q25" value="4"> 8¼ céntimos</label></div></div>
+        <!-- Pregunta 16 -->
+        <div class="question"><p>16. ¿Cuál es el promedio diario de municiones disparadas si un artillero dispara 231 rondas en 7 días?</p><div class="options"><label><input type="radio" name="q26" value="1"> 37</label><br><label><input type="radio" name="q26" value="2"> 66</label><br><label><input type="radio" name="q26" value="3"> 33</label><br><label><input type="radio" name="q26" value="4"> 1617</label></div></div>
+        <!-- Pregunta 17 -->
+        <div class="question"><p>17. ¿Cuántas cajas? Nota: Todas las cajas son del mismo tamaño en cada pregunta.</p><div class="options"><img src="assets/agct1.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q27" value="1"> 5</label><br><label><input type="radio" name="q27" value="2"> 4</label><br><label><input type="radio" name="q27" value="3"> 3</label><br><label><input type="radio" name="q27" value="4"> 6</label></div></div>
+        <!-- Pregunta 18 -->
+        <div class="question"><p>18. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct2.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q28" value="1"> 4</label><br><label><input type="radio" name="q28" value="2"> 5</label><br><label><input type="radio" name="q28" value="3"> 8</label><br><label><input type="radio" name="q28" value="4"> 6</label></div></div>
+        <!-- Pregunta 19 -->
+        <div class="question"><p>19. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct3.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q29" value="1"> 5</label><br><label><input type="radio" name="q29" value="2"> 6</label><br><label><input type="radio" name="q29" value="3"> 8</label><br><label><input type="radio" name="q29" value="4"> 10</label></div></div>
+        <!-- Pregunta 20 -->
+        <div class="question"><p>20. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct4.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q30" value="1"> 6</label><br><label><input type="radio" name="q30" value="2"> 3</label><br><label><input type="radio" name="q30" value="3"> 4</label><br><label><input type="radio" name="q30" value="4"> 5</label></div></div>
+        <!-- Pregunta 21 -->
+        <div class="question"><p>21. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct5.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q31" value="1"> 15</label><br><label><input type="radio" name="q31" value="2"> 17</label><br><label><input type="radio" name="q31" value="3"> 20</label><br><label><input type="radio" name="q31" value="4"> 18</label></div></div>
+        <!-- Pregunta 22 -->
+        <div class="question"><p>22. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct6.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q32" value="1"> 9</label><br><label><input type="radio" name="q32" value="2"> 27</label><br><label><input type="radio" name="q32" value="3"> 18</label><br><label><input type="radio" name="q32" value="4"> 36</label></div></div>
+        <!-- Pregunta 23 -->
+        <div class="question"><p>23. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct7.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q33" value="1"> 5</label><br><label><input type="radio" name="q33" value="2"> 7</label><br><label><input type="radio" name="q33" value="3"> 6</label><br><label><input type="radio" name="q33" value="4"> 8</label></div></div>
+        <!-- Pregunta 24 -->
+        <div class="question"><p>24. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct8.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q34" value="1"> 5</label><br><label><input type="radio" name="q34" value="2"> 7</label><br><label><input type="radio" name="q34" value="3"> 9</label><br><label><input type="radio" name="q34" value="4"> 11</label></div></div>
+        <!-- Pregunta 25 -->
+        <div class="question"><p>25. Un hombre puede **DAÑAR** el trabajo de todo un escuadrón</p><div class="options"><label><input type="radio" name="q35" value="1"> estropear</label><br><label><input type="radio" name="q35" value="2"> reemplazar</label><br><label><input type="radio" name="q35" value="3"> reparar</label><br><label><input type="radio" name="q35" value="4"> mejorar</label></div></div>
+        <!-- Pregunta 26 -->
+        <div class="question"><p>26. Se proporcionaron **EMPLAZAMIENTOS** para los cañones</p><div class="options"><label><input type="radio" name="q36" value="1"> bases</label><br><label><input type="radio" name="q36" value="2"> ruedas</label><br><label><input type="radio" name="q36" value="3"> partes extra</label><br><label><input type="radio" name="q36" value="4"> camiones</label></div></div>
+        <!-- Pregunta 27 -->
+        <div class="question"><p>27. Los camiones **GIRARON** hacia el sur</p><div class="options"><label><input type="radio" name="q37" value="1"> avanzaron</label><br><label><input type="radio" name="q37" value="2"> giraron</label><br><label><input type="radio" name="q37" value="3"> subieron</label><br><label><input type="radio" name="q37" value="4"> enfrentaron</label></div></div>
+        <!-- Pregunta 28 -->
+        <div class="question"><p>28. Los **UNIFORMES** del soldado estaban en buen orden</p><div class="options"><label><input type="radio" name="q38" value="1"> papeles</label><br><label><input type="radio" name="q38" value="2"> cartas</label><br><label><input type="radio" name="q38" value="3"> libros</label><br><label><input type="radio" name="q38" value="4"> uniformes</label></div></div>
+        <!-- Pregunta 29 -->
+        <div class="question"><p>29. El **TERRENO** era plano</p><div class="options"><label><input type="radio" name="q39" value="1"> suelo</label><br><label><input type="radio" name="q39" value="2"> lecho del río</label><br><label><input type="radio" name="q39" value="3"> terraza</label><br><label><input type="radio" name="q39" value="4"> base</label></div></div>
+        <!-- Pregunta 30 -->
+        <div class="question"><p>30. La velocidad del tanque **EXCEDIÓ** los 50 km por hora</p><div class="options"><label><input type="radio" name="q40" value="1"> fue mayor que</label><br><label><input type="radio" name="q40" value="2"> igualó</label><br><label><input type="radio" name="q40" value="3"> casi alcanzó</label><br><label><input type="radio" name="q40" value="4"> fue menor que</label></div></div>
+        <!-- Pregunta 31 -->
+        <div class="question"><p>31. Si hay 24 latas de duraznos en una caja que cuesta $2.64, ¿cuál es el precio por lata?</p><div class="options"><label><input type="radio" name="q41" value="1"> 10 céntimos</label><br><label><input type="radio" name="q41" value="2"> 11 céntimos</label><br><label><input type="radio" name="q41" value="3"> 12 céntimos</label><br><label><input type="radio" name="q41" value="4"> 13 céntimos</label></div></div>
+        <!-- Pregunta 32 -->
+        <div class="question"><p>32. ¿Cuántos cartuchos hay en cada pila si un fusilero divide 228 cartuchos en 3 pilas iguales?</p><div class="options"><label><input type="radio" name="q42" value="1"> 76</label><br><label><input type="radio" name="q42" value="2"> 57</label><br><label><input type="radio" name="q42" value="3"> 684</label><br><label><input type="radio" name="q42" value="4"> 77</label></div></div>
+        <!-- Pregunta 33 -->
+        <div class="question"><p>33. El soldado A gasta 45 céntimos diarios en la cantina y B gasta 38 céntimos. ¿Cuánto más gasta A que B en una semana?</p><div class="options"><label><input type="radio" name="q43" value="1"> 35 céntimos</label><br><label><input type="radio" name="q43" value="2"> 42 céntimos</label><br><label><input type="radio" name="q43" value="3"> 49 céntimos</label><br><label><input type="radio" name="q43" value="4"> 56 céntimos</label></div></div>
+        <!-- Pregunta 34 -->
+        <div class="question"><p>34. Un avión valuado en $4,800 tiene una tasa de impuestos de $3 por cada $800. ¿Cuánto son los impuestos?</p><div class="options"><label><input type="radio" name="q44" value="1"> $18</label><br><label><input type="radio" name="q44" value="2"> $17</label><br><label><input type="radio" name="q44" value="3"> $16</label><br><label><input type="radio" name="q44" value="4"> $20</label></div></div>
+        <!-- Pregunta 35 -->
+        <div class="question"><p>35. El perímetro de un cuartel cuadrado es 140 pies. ¿Cuál es la longitud de cada lado?</p><div class="options"><label><input type="radio" name="q45" value="1"> 25 pies</label><br><label><input type="radio" name="q45" value="2"> 45 pies</label><br><label><input type="radio" name="q45" value="3"> 15 pies</label><br><label><input type="radio" name="q45" value="4"> 35 pies</label></div></div>
+        <!-- Pregunta 36 -->
+        <div class="question"><p>36. ¿Cuántos pies cúbicos de pólvora llenan un depósito de 11 pies de largo, 7 pies de ancho y 6 pies de alto?</p><div class="options"><label><input type="radio" name="q46" value="1"> 231</label><br><label><input type="radio" name="q46" value="2"> 83</label><br><label><input type="radio" name="q46" value="3"> 462</label><br><label><input type="radio" name="q46" value="4"> 662</label></div></div>
+        <!-- Pregunta 37 -->
+        <div class="question"><p>37. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct9.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q47" value="1"> 4</label><br><label><input type="radio" name="q47" value="2"> 5</label><br><label><input type="radio" name="q47" value="3"> 6</label><br><label><input type="radio" name="q47" value="4"> 7</label></div></div>
+        <!-- Pregunta 38 -->
+        <div class="question"><p>38. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct10.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q48" value="1"> 4</label><br><label><input type="radio" name="q48" value="2"> 10</label><br><label><input type="radio" name="q48" value="3"> 6</label><br><label><input type="radio" name="q48" value="4"> 8</label></div></div>
+        <!-- Pregunta 39 -->
+        <div class="question"><p>39. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct11.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q49" value="1"> 7</label><br><label><input type="radio" name="q49" value="2"> 10</label><br><label><input type="radio" name="q49" value="3"> 14</label><br><label><input type="radio" name="q49" value="4"> 12</label></div></div>
+        <!-- Pregunta 40 -->
+        <div class="question"><p>40. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct12.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q50" value="1"> 4</label><br><label><input type="radio" name="q50" value="2"> 3</label><br><label><input type="radio" name="q50" value="3"> 6</label><br><label><input type="radio" name="q50" value="4"> 5</label></div></div>
+        <!-- Pregunta 41 -->
+        <div class="question"><p>41. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct13.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q51" value="1"> 8</label><br><label><input type="radio" name="q51" value="2"> 9</label><br><label><input type="radio" name="q51" value="3"> 10</label><br><label><input type="radio" name="q51" value="4"> 11</label></div></div>
+        <!-- Pregunta 42 -->
+        <div class="question"><p>42. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct14.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q52" value="1"> 7</label><br><label><input type="radio" name="q52" value="2"> 6</label><br><label><input type="radio" name="q52" value="3"> 8</label><br><label><input type="radio" name="q52" value="4"> 9</label></div></div>
+        <!-- Pregunta 43 -->
+        <div class="question"><p>43. La fortaleza era **ACCESIBLE**</p><div class="options"><label><input type="radio" name="q53" value="1"> formidable</label><br><label><input type="radio" name="q53" value="2"> accesible</label><br><label><input type="radio" name="q53" value="3"> defendible</label><br><label><input type="radio" name="q53" value="4"> bloqueada</label></div></div>
+        <!-- Pregunta 44 -->
+        <div class="question"><p>44. Un buen soldado no tiene un **EGOÍSMO** excesivo</p><div class="options"><label><input type="radio" name="q54" value="1"> peso</label><br><label><input type="radio" name="q54" value="2"> estatura</label><br><label><input type="radio" name="q54" value="3"> torpeza</label><br><label><input type="radio" name="q54" value="4"> arrogancia</label></div></div>
+        <!-- Pregunta 45 -->
+        <div class="question"><p>45. Se escuchó una **DETONACIÓN**</p><div class="options"><label><input type="radio" name="q55" value="1"> choque</label><br><label><input type="radio" name="q55" value="2"> voz</label><br><label><input type="radio" name="q55" value="3"> explosión</label><br><label><input type="radio" name="q55" value="4"> lamento</label></div></div>
+        <!-- Pregunta 46 -->
+        <div class="question"><p>46. El hombre fue **ESPOSADO** y llevado al puesto de guardia</p><div class="options"><label><input type="radio" name="q56" value="1"> capturado</label><br><label><input type="radio" name="q56" value="2"> interrogado</label><br><label><input type="radio" name="q56" value="3"> esposado</label><br><label><input type="radio" name="q56" value="4"> reprendido</label></div></div>
+        <!-- Pregunta 47 -->
+        <div class="question"><p>47. Fue **INQUEBRANTABLE** en su lealtad</p><div class="options"><label><input type="radio" name="q57" value="1"> inconstante</label><br><label><input type="radio" name="q57" value="2"> equivocado</label><br><label><input type="radio" name="q57" value="3"> firme</label><br><label><input type="radio" name="q57" value="4"> correcto</label></div></div>
+        <!-- Pregunta 48 -->
+        <div class="question"><p>48. Era **PRERROGATIVA** del oficial dar órdenes</p><div class="options"><label><input type="radio" name="q58" value="1"> derecho</label><br><label><input type="radio" name="q58" value="2"> tarea</label><br><label><input type="radio" name="q58" value="3"> característica</label><br><label><input type="radio" name="q58" value="4"> hábito</label></div></div>
+        <!-- Pregunta 49 -->
+        <div class="question"><p>49. El primer regimiento de caballería tenía 120 caballos. El segundo tenía el 70% de esa cantidad. ¿Cuántos caballos tenía el segundo?</p><div class="options"><label><input type="radio" name="q59" value="1"> 96</label><br><label><input type="radio" name="q59" value="2"> 84</label><br><label><input type="radio" name="q59" value="3"> 75</label><br><label><input type="radio" name="q59" value="4"> 115</label></div></div>
+        <!-- Pregunta 50 -->
+        <div class="question"><p>50. El soldado Jones gastó 1/2 de su dinero en papelería, 1/8 en tabaco y 1/4 en recreación. Le quedaron $6. ¿Cuánto tenía originalmente?</p><div class="options"><label><input type="radio" name="q60" value="1"> $48</label><br><label><input type="radio" name="q60" value="2"> $54</label><br><label><input type="radio" name="q60" value="3"> $64</label><br><label><input type="radio" name="q60" value="4"> $72</label></div></div>
+        <!-- Pregunta 51 -->
+        <div class="question"><p>51. Si 60 rifles automáticos cuestan lo mismo que 2 ametralladoras, ¿cuántos rifles se pueden comprar por 5 ametralladoras?</p><div class="options"><label><input type="radio" name="q61" value="1"> 300</label><br><label><input type="radio" name="q61" value="2"> 180</label><br><label><input type="radio" name="q61" value="3"> 150</label><br><label><input type="radio" name="q61" value="4"> 120</label></div></div>
+        <!-- Pregunta 52 -->
+        <div class="question"><p>52. ¿Cuántos pies cúbicos de tierra se deben remover para una zanja de 6 pies de profundidad, 5 pies de ancho y 200 pies de largo?</p><div class="options"><label><input type="radio" name="q62" value="1"> 3,000</label><br><label><input type="radio" name="q62" value="2"> 6,000</label><br><label><input type="radio" name="q62" value="3"> 9,000</label><br><label><input type="radio" name="q62" value="4"> 12,000</label></div></div>
+        <!-- Pregunta 53 -->
+        <div class="question"><p>53. Si un tanque recorre 150 pies en 10 segundos, ¿cuántos pies recorre en 1/5 de segundo?</p><div class="options"><label><input type="radio" name="q63" value="1"> 3</label><br><label><input type="radio" name="q63" value="2"> 5</label><br><label><input type="radio" name="q63" value="3"> 6</label><br><label><input type="radio" name="q63" value="4"> 10</label></div></div>
+        <!-- Pregunta 54 -->
+        <div class="question"><p>54. Si el concreto de una calle cuesta $0.65 por pie lineal, ¿cuánto cuesta el concreto en ambos lados de una vía de 500 pies?</p><div class="options"><label><input type="radio" name="q64" value="1"> $775</label><br><label><input type="radio" name="q64" value="2"> $325</label><br><label><input type="radio" name="q64" value="3"> $650</label><br><label><input type="radio" name="q64" value="4"> $690</label></div></div>
+        <!-- Pregunta 55 -->
+        <div class="question"><p>55. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct15.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q65" value="1"> 7</label><br><label><input type="radio" name="q65" value="2"> 6</label><br><label><input type="radio" name="q65" value="3"> 5</label><br><label><input type="radio" name="q65" value="4"> 4</label></div></div>
+        <!-- Pregunta 56 -->
+        <div class="question"><p>56. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct16.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q66" value="1"> 12</label><br><label><input type="radio" name="q66" value="2"> 7</label><br><label><input type="radio" name="q66" value="3"> 9</label><br><label><input type="radio" name="q66" value="4"> 10</label></div></div>
+        <!-- Pregunta 57 -->
+        <div class="question"><p>57. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct17.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q67" value="1"> 11</label><br><label><input type="radio" name="q67" value="2"> 9</label><br><label><input type="radio" name="q67" value="3"> 15</label><br><label><input type="radio" name="q67" value="4"> 14</label></div></div>
+        <!-- Pregunta 58 -->
+        <div class="question"><p>58. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct18.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q68" value="1"> 5</label><br><label><input type="radio" name="q68" value="2"> 8</label><br><label><input type="radio" name="q68" value="3"> 6</label><br><label><input type="radio" name="q68" value="4"> 7</label></div></div>
+        <!-- Pregunta 59 -->
+        <div class="question"><p>59. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct19.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q69" value="1"> 4</label><br><label><input type="radio" name="q69" value="2"> 5</label><br><label><input type="radio" name="q69" value="3"> 6</label><br><label><input type="radio" name="q69" value="4"> 7</label></div></div>
+        <!-- Pregunta 60 -->
+        <div class="question"><p>60. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct20.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q70" value="1"> 8</label><br><label><input type="radio" name="q70" value="2"> 10</label><br><label><input type="radio" name="q70" value="3"> 9</label><br><label><input type="radio" name="q70" value="4"> 11</label></div></div>
+        <!-- Pregunta 61 -->
+        <div class="question"><p>61. El explorador **OCULTÓ** comida antes de partir</p><div class="options"><label><input type="radio" name="q71" value="1"> comió</label><br><label><input type="radio" name="q71" value="2"> tomó</label><br><label><input type="radio" name="q71" value="3"> cocinó</label><br><label><input type="radio" name="q71" value="4"> ocultó</label></div></div>
+        <!-- Pregunta 62 -->
+        <div class="question"><p>62. Los defectos **VISUALES** no son comunes entre los soldados</p><div class="options"><label><input type="radio" name="q72" value="1"> auditivos</label><br><label><input type="radio" name="q72" value="2"> observables</label><br><label><input type="radio" name="q72" value="3"> visuales</label><br><label><input type="radio" name="q72" value="4"> del habla</label></div></div>
+        <!-- Pregunta 63 -->
+        <div class="question"><p>63. Sus altos **IDEALES** hicieron que sus amigos lo quisieran</p><div class="options"><label><input type="radio" name="q73" value="1"> principios</label><br><label><input type="radio" name="q73" value="2"> habilidades</label><br><label><input type="radio" name="q73" value="3"> esperanzas</label><br><label><input type="radio" name="q73" value="4"> pensamientos</label></div></div>
+        <!-- Pregunta 64 -->
+        <div class="question"><p>64. La valentía de cada soldado era **EVIDENTE**</p><div class="options"><label><input type="radio" name="q74" value="1"> sabia</label><br><label><input type="radio" name="q74" value="2"> evidente</label><br><label><input type="radio" name="q74" value="3"> recompensada</label><br><label><input type="radio" name="q74" value="4"> feroz</label></div></div>
+        <!-- Pregunta 65 -->
+        <div class="question"><p>65. Smith recibió un **RECONOCIMIENTO** por su puntería</p><div class="options"><label><input type="radio" name="q75" value="1"> elogio</label><br><label><input type="radio" name="q75" value="2"> reproche</label><br><label><input type="radio" name="q75" value="3"> castigo</label><br><label><input type="radio" name="q75" value="4"> calificación</label></div></div>
+        <!-- Pregunta 66 -->
+        <div class="question"><p>66. Las paredes del cuartel fueron **ENBLANQUECIDAS**</p><div class="options"><label><input type="radio" name="q76" value="1"> encaladas</label><br><label><input type="radio" name="q76" value="2"> pintadas</label><br><label><input type="radio" name="q76" value="3"> impermeabilizadas</label><br><label><input type="radio" name="q76" value="4"> reforzadas</label></div></div>
+        <!-- Pregunta 67 -->
+        <div class="question"><p>67. Una casa de suministros que ya había entregado 2,000 barriles de manzanas a un cantón dio el resto a 30 comedores, cada uno recibiendo 50 barriles. ¿Cuántos barriles suministró en total?</p><div class="options"><label><input type="radio" name="q77" value="1"> 1,500</label><br><label><input type="radio" name="q77" value="2"> 3,500</label><br><label><input type="radio" name="q77" value="3"> 6,500</label><br><label><input type="radio" name="q77" value="4"> 10,000</label></div></div>
+        <!-- Pregunta 68 -->
+        <div class="question"><p>68. Si un círculo tiene 360 grados, ¿cuántos grados sombrearías en un gráfico para mostrar que el 20% de los hombres son oficiales?</p><div class="options"><label><input type="radio" name="q78" value="1"> 20</label><br><label><input type="radio" name="q78" value="2"> 30</label><br><label><input type="radio" name="q78" value="3"> 36</label><br><label><input type="radio" name="q78" value="4"> 72</label></div></div>
+        <!-- Pregunta 69 -->
+        <div class="question"><p>69. Un auto comprado por dos oficiales cuesta $350. El oficial A pagó 3/7 del monto. ¿Cuánto pagó el oficial B?</p><div class="options"><label><input type="radio" name="q79" value="1"> $150</label><br><label><input type="radio" name="q79" value="2"> $200</label><br><label><input type="radio" name="q79" value="3"> $300</label><br><label><input type="radio" name="q79" value="4"> $250</label></div></div>
+        <!-- Pregunta 70 -->
+        <div class="question"><p>70. Un vehículo de exploración va a 64 km/h en pavimento y 40 km/h en campo. ¿Cuánto tarda en recorrer 200 millas si 1/4 es campo?</p><div class="options"><label><input type="radio" name="q80" value="1"> 2 horas</label><br><label><input type="radio" name="q80" value="2"> 3¾ horas</label><br><label><input type="radio" name="q80" value="3"> 5¾ horas</label><br><label><input type="radio" name="q80" value="4"> 9 horas</label></div></div>
+        <!-- Pregunta 71 -->
+        <div class="question"><p>71. Si una tela de 30 pulgadas encoge a 28 pulgadas al lavarse, ¿cuánto medirá una tela de 75 pulgadas tras encoger?</p><div class="options"><label><input type="radio" name="q81" value="1"> 70</label><br><label><input type="radio" name="q81" value="2"> 71</label><br><label><input type="radio" name="q81" value="3"> 72</label><br><label><input type="radio" name="q81" value="4"> 73</label></div></div>
+        <!-- Pregunta 72 -->
+        <div class="question"><p>72. De 4 escuadrones de 16 hombres, se liberan 5/8 de uno, 1/2 de otro, 3/4 de un tercero y 1/8 del cuarto. ¿Qué fracción del total fue liberada?</p><div class="options"><label><input type="radio" name="q82" value="1"> 1/2</label><br><label><input type="radio" name="q82" value="2"> 47/64</label><br><label><input type="radio" name="q82" value="3"> 17/32</label><br><label><input type="radio" name="q82" value="4"> 3/8</label></div></div>
+        <!-- Pregunta 73 -->
+        <div class="question"><p>73. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct21.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q83" value="1"> 9</label><br><label><input type="radio" name="q83" value="2"> 6</label><br><label><input type="radio" name="q83" value="3"> 7</label><br><label><input type="radio" name="q83" value="4"> 8</label></div></div>
+        <!-- Pregunta 74 -->
+        <div class="question"><p>74. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct22.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q84" value="1"> 5</label><br><label><input type="radio" name="q84" value="2"> 4</label><br><label><input type="radio" name="q84" value="3"> 6</label><br><label><input type="radio" name="q84" value="4"> 7</label></div></div>
+        <!-- Pregunta 75 -->
+        <div class="question"><p>75. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct23.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q85" value="1"> 7</label><br><label><input type="radio" name="q85" value="2"> 8</label><br><label><input type="radio" name="q85" value="3"> 9</label><br><label><input type="radio" name="q85" value="4"> 10</label></div></div>
+        <!-- Pregunta 76 -->
+        <div class="question"><p>76. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct24.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q86" value="1"> 8</label><br><label><input type="radio" name="q86" value="2"> 10</label><br><label><input type="radio" name="q86" value="3"> 12</label><br><label><input type="radio" name="q86" value="4"> 6</label></div></div>
+        <!-- Pregunta 77 -->
+        <div class="question"><p>77. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct25.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q87" value="1"> 20</label><br><label><input type="radio" name="q87" value="2"> 15</label><br><label><input type="radio" name="q87" value="3"> 25</label><br><label><input type="radio" name="q87" value="4"> 10</label></div></div>
+        <!-- Pregunta 78 -->
+        <div class="question"><p>78. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct26.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q88" value="1"> 50</label><br><label><input type="radio" name="q88" value="2"> 42</label><br><label><input type="radio" name="q88" value="3"> 48</label><br><label><input type="radio" name="q88" value="4"> 54</label></div></div>
+        <!-- Pregunta 79 -->
+        <div class="question"><p>79. El soldado estaba **NATURALMENTE** apto para sus deberes</p><div class="options"><label><input type="radio" name="q89" value="1"> naturalmente</label><br><label><input type="radio" name="q89" value="2"> ciertamente</label><br><label><input type="radio" name="q89" value="3"> completamente</label><br><label><input type="radio" name="q89" value="4"> externamente</label></div></div>
+        <!-- Pregunta 80 -->
+        <div class="question"><p>80. El **IMPACTO** de la bomba rompió muchas ventanas</p><div class="options"><label><input type="radio" name="q90" value="1"> fragmentos</label><br><label><input type="radio" name="q90" value="2"> ruido</label><br><label><input type="radio" name="q90" value="3"> golpe</label><br><label><input type="radio" name="q90" value="4"> peso</label></div></div>
+        <!-- Pregunta 81 -->
+        <div class="question"><p>81. El deber era **PRINCIPALMENTE** militar</p><div class="options"><label><input type="radio" name="q91" value="1"> principalmente</label><br><label><input type="radio" name="q91" value="2"> únicamente</label><br><label><input type="radio" name="q91" value="3"> definitivamente</label><br><label><input type="radio" name="q91" value="4"> usualmente</label></div></div>
+        <!-- Pregunta 82 -->
+        <div class="question"><p>82. Sus **LOGROS** como artillero eran bien conocidos</p><div class="options"><label><input type="radio" name="q92" value="1"> deberes</label><br><label><input type="radio" name="q92" value="2"> logros</label><br><label><input type="radio" name="q92" value="3"> experiencias</label><br><label><input type="radio" name="q92" value="4"> lecciones</label></div></div>
+        <!-- Pregunta 83 -->
+        <div class="question"><p>83. Su trabajo era **SINCRONIZAR** el disparo de los cañones</p><div class="options"><label><input type="radio" name="q93" value="1"> contar</label><br><label><input type="radio" name="q93" value="2"> coordinar</label><br><label><input type="radio" name="q93" value="3"> ordenar</label><br><label><input type="radio" name="q93" value="4"> simplificar</label></div></div>
+        <!-- Pregunta 84 -->
+        <div class="question"><p>84. El campamento **COLINDA** con la carretera</p><div class="options"><label><input type="radio" name="q94" value="1"> se abre a</label><br><label><input type="radio" name="q94" value="2"> colinda con</label><br><label><input type="radio" name="q94" value="3"> termina en</label><br><label><input type="radio" name="q94" value="4"> es visible desde</label></div></div>
+        <!-- Pregunta 85 -->
+        <div class="question"><p>85. En un puesto militar hay 2,160 hombres: 1/2 en la escuela de ingenieros, 1/3 en guerra química, 1/9 en intendencia y el resto en infantería. ¿Cuántos están en infantería?</p><div class="options"><label><input type="radio" name="q95" value="1"> 160</label><br><label><input type="radio" name="q95" value="2"> 180</label><br><label><input type="radio" name="q95" value="3"> 120</label><br><label><input type="radio" name="q95" value="4"> 240</label></div></div>
+        <!-- Pregunta 86 -->
+        <div class="question"><p>86. Si un vehículo de exploración recorre 300 pies en 15 segundos, ¿cuántos pies recorre en 1/5 de segundo?</p><div class="options"><label><input type="radio" name="q96" value="1"> 4</label><br><label><input type="radio" name="q96" value="2"> 5</label><br><label><input type="radio" name="q96" value="3"> 6</label><br><label><input type="radio" name="q96" value="4"> 10</label></div></div>
+        <!-- Pregunta 87 -->
+        <div class="question"><p>87. En un puesto militar hay 10,000 hombres, 8% son oficiales comisionados. De estos, 60% son regulares y el resto reservistas. ¿Cuántos reservistas hay?</p><div class="options"><label><input type="radio" name="q97" value="1"> 600</label><br><label><input type="radio" name="q97" value="2"> 480</label><br><label><input type="radio" name="q97" value="3"> 320</label><br><label><input type="radio" name="q97" value="4"> 400</label></div></div>
+        <!-- Pregunta 88 -->
+        <div class="question"><p>88. ¿Cuánto queda si de 11 yardas 2 pies 9 pulgadas quitas 7 yardas 2 pies 11 pulgadas? (1 yarda = 3 pies, 1 pie = 12 pulgadas)</p><div class="options"><label><input type="radio" name="q98" value="1"> 3 yardas 2 pulgadas</label><br><label><input type="radio" name="q98" value="2"> 4 yardas 2 pulgadas</label><br><label><input type="radio" name="q98" value="3"> 3 yardas 2 pies 10 pulgadas</label><br><label><input type="radio" name="q98" value="4"> 4 yardas 4 pies 2 pulgadas</label></div></div>
+        <!-- Pregunta 89 -->
+        <div class="question"><p>89. Si un centro de reemplazo está al 20% de su capacidad y tiene 2,500 hombres, ¿cuántos puede alojar al 100%?</p><div class="options"><label><input type="radio" name="q99" value="1"> 125,500</label><br><label><input type="radio" name="q99" value="2"> 12,500</label><br><label><input type="radio" name="q99" value="3"> 50,000</label><br><label><input type="radio" name="q99" value="4"> 10,000</label></div></div>
+        <!-- Pregunta 90 -->
+        <div class="question"><p>90. En un puesto militar hay 1,500 hombres: 400 en ingenieros, 400 en guerra química, 250 en intendencia y el resto en infantería. ¿Qué fracción está en infantería?</p><div class="options"><label><input type="radio" name="q100" value="1"> 1/6</label><br><label><input type="radio" name="q100" value="2"> 2/9</label><br><label><input type="radio" name="q100" value="3"> 3/10</label><br><label><input type="radio" name="q100" value="4"> 1/3</label></div></div>
+        <!-- Pregunta 91 -->
+        <div class="question"><p>91. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct27.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q101" value="1"> 9</label><br><label><input type="radio" name="q101" value="2"> 7</label><br><label><input type="radio" name="q101" value="3"> 8</label><br><label><input type="radio" name="q101" value="4"> 6</label></div></div>
+        <!-- Pregunta 92 -->
+        <div class="question"><p>92. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct28.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q102" value="1"> 9</label><br><label><input type="radio" name="q102" value="2"> 5</label><br><label><input type="radio" name="q102" value="3"> 10</label><br><label><input type="radio" name="q102" value="4"> 7</label></div></div>
+        <!-- Pregunta 93 -->
+        <div class="question"><p>93. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct29.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q103" value="1"> 6</label><br><label><input type="radio" name="q103" value="2"> 8</label><br><label><input type="radio" name="q103" value="3"> 5</label><br><label><input type="radio" name="q103" value="4"> 7</label></div></div>
+        <!-- Pregunta 94 -->
+        <div class="question"><p>94. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct30.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q104" value="1"> 8</label><br><label><input type="radio" name="q104" value="2"> 10</label><br><label><input type="radio" name="q104" value="3"> 6</label><br><label><input type="radio" name="q104" value="4"> 12</label></div></div>
+        <!-- Pregunta 95 -->
+        <div class="question"><p>95. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct31.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q105" value="1"> 7</label><br><label><input type="radio" name="q105" value="2"> 8</label><br><label><input type="radio" name="q105" value="3"> 9</label><br><label><input type="radio" name="q105" value="4"> 6</label></div></div>
+        <!-- Pregunta 96 -->
+        <div class="question"><p>96. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct32.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q106" value="1"> 11</label><br><label><input type="radio" name="q106" value="2"> 10</label><br><label><input type="radio" name="q106" value="3"> 6</label><br><label><input type="radio" name="q106" value="4"> 12</label></div></div>
+        <!-- Pregunta 97 -->
+        <div class="question"><p>97. El peso del cañón **LIMITA** su uso</p><div class="options"><label><input type="radio" name="q107" value="1"> limita</label><br><label><input type="radio" name="q107" value="2"> permite</label><br><label><input type="radio" name="q107" value="3"> elimina</label><br><label><input type="radio" name="q107" value="4"> asegura</label></div></div>
+        <!-- Pregunta 98 -->
+        <div class="question"><p>98. El oficial era conocido por sus **PREDICCIONES** exitosas</p><div class="options"><label><input type="radio" name="q108" value="1"> mentiras</label><br><label><input type="radio" name="q108" value="2"> ataques</label><br><label><input type="radio" name="q108" value="3"> predicciones</label><br><label><input type="radio" name="q108" value="4"> hazañas</label></div></div>
+        <!-- Pregunta 99 -->
+        <div class="question"><p>99. La reputación del soldado Smith fue **REIVINDICADA**</p><div class="options"><label><input type="radio" name="q109" value="1"> dudada</label><br><label><input type="radio" name="q109" value="2"> reivindicada</label><br><label><input type="radio" name="q109" value="3"> conocida</label><br><label><input type="radio" name="q109" value="4"> perdida</label></div></div>
+        <!-- Pregunta 100 -->
+        <div class="question"><p>100. El soldado Jones encontró la vida militar **ABSORBENTE**</p><div class="options"><label><input type="radio" name="q110" value="1"> absorbente</label><br><label><input type="radio" name="q110" value="2"> aburrida</label><br><label><input type="radio" name="q110" value="3"> diferente</label><br><label><input type="radio" name="q110" value="4"> estimulante</label></div></div>
+        <!-- Pregunta 101 -->
+        <div class="question"><p>101. Las tácticas de las tropas eran **ENGAÑOSAS**</p><div class="options"><label><input type="radio" name="q111" value="1"> engañosas</label><br><label><input type="radio" name="q111" value="2"> rápidas</label><br><label><input type="radio" name="q111" value="3"> invisibles</label><br><label><input type="radio" name="q111" value="4"> agotadoras</label></div></div>
+        <!-- Pregunta 102 -->
+        <div class="question"><p>102. El mensaje original del señalero era **FALSO**</p><div class="options"><label><input type="radio" name="q112" value="1"> vacilante</label><br><label><input type="radio" name="q112" value="2"> detenido</label><br><label><input type="radio" name="q112" value="3"> falso</label><br><label><input type="radio" name="q112" value="4"> malentendido</label></div></div>
+        <!-- Pregunta 103 -->
+        <div class="question"><p>103. Un camión va a 6 millas por hora subiendo y 27 millas por hora bajando. ¿Cuánto tarda en recorrer 90 millas si 2/5 es subida?</p><div class="options"><label><input type="radio" name="q113" value="1"> 5⅔ horas</label><br><label><input type="radio" name="q113" value="2"> 8 horas</label><br><label><input type="radio" name="q113" value="3"> 8¼ horas</label><br><label><input type="radio" name="q113" value="4"> 10⅓ horas</label></div></div>
+        <!-- Pregunta 104 -->
+        <div class="question"><p>104. Un soldado gastó 1/10 de su dinero en cigarros y 5 veces eso en estampillas. Le quedaron $0.52. ¿Cuánto tenía originalmente?</p><div class="options"><label><input type="radio" name="q114" value="1"> $1.30</label><br><label><input type="radio" name="q114" value="2"> $1.40</label><br><label><input type="radio" name="q114" value="3"> $1.50</label><br><label><input type="radio" name="q114" value="4"> $1.60</label></div></div>
+        <!-- Pregunta 105 -->
+        <div class="question"><p>105. Una habitación de 20 pies por 17 pies tiene una alfombra de 15 pies por 10 pies. ¿Cuál es el área del espacio alrededor?</p><div class="options"><label><input type="radio" name="q115" value="1"> 150</label><br><label><input type="radio" name="q115" value="2"> 135</label><br><label><input type="radio" name="q115" value="3"> 190</label><br><label><input type="radio" name="q115" value="4"> 199</label></div></div>
+        <!-- Pregunta 106 -->
+        <div class="question"><p>106. Si 12 hombres tardan 5 horas en cavar una zanja, ¿cuántos hombres se necesitan para cavarla en 2 horas?</p><div class="options"><label><input type="radio" name="q116" value="1"> 20</label><br><label><input type="radio" name="q116" value="2"> 24</label><br><label><input type="radio" name="q116" value="3"> 26</label><br><label><input type="radio" name="q116" value="4"> 30</label></div></div>
+        <!-- Pregunta 107 -->
+        <div class="question"><p>107. Un auto blindado va a 50 millas por hora en pavimento. Tarda 4 horas en recorrer 150 millas, 2/3 en pavimento y el resto sin pavimentar. ¿A qué velocidad va sin pavimentar?</p><div class="options"><label><input type="radio" name="q117" value="1"> 12½</label><br><label><input type="radio" name="q117" value="2"> 25</label><br><label><input type="radio" name="q117" value="3"> 30</label><br><label><input type="radio" name="q117" value="4"> 37½</label></div></div>
+        <!-- Pregunta 108 -->
+        <div class="question"><p>108. En una zanja de 800 yardas, dos equipos comenzaron en extremos opuestos. Uno cavó 7/9 de lo que el otro. ¿Cuánto cavó el equipo más rápido?</p><div class="options"><label><input type="radio" name="q118" value="1"> 350 yardas</label><br><label><input type="radio" name="q118" value="2"> 375 yardas</label><br><label><input type="radio" name="q118" value="3"> 410 yardas</label><br><label><input type="radio" name="q118" value="4"> 450 yardas</label></div></div>
+        <!-- Pregunta 109 -->
+        <div class="question"><p>109. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct33.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q119" value="1"> 8</label><br><label><input type="radio" name="q119" value="2"> 9</label><br><label><input type="radio" name="q119" value="3"> 6</label><br><label><input type="radio" name="q119" value="4"> 11</label></div></div>
+        <!-- Pregunta 110 -->
+        <div class="question"><p>110. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct34.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q120" value="1"> 9</label><br><label><input type="radio" name="q120" value="2"> 10</label><br><label><input type="radio" name="q120" value="3"> 12</label><br><label><input type="radio" name="q120" value="4"> 13</label></div></div>
+        <!-- Pregunta 111 -->
+        <div class="question"><p>111. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct35.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q121" value="1"> 6</label><br><label><input type="radio" name="q121" value="2"> 8</label><br><label><input type="radio" name="q121" value="3"> 7</label><br><label><input type="radio" name="q121" value="4"> 9</label></div></div>
+        <!-- Pregunta 112 -->
+        <div class="question"><p>112. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct36.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q122" value="1"> 14</label><br><label><input type="radio" name="q122" value="2"> 12</label><br><label><input type="radio" name="q122" value="3"> 13</label><br><label><input type="radio" name="q122" value="4"> 10</label></div></div>
+        <!-- Pregunta 113 -->
+        <div class="question"><p>113. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct37.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q123" value="1"> 8</label><br><label><input type="radio" name="q123" value="2"> 10</label><br><label><input type="radio" name="q123" value="3"> 9</label><br><label><input type="radio" name="q123" value="4"> 11</label></div></div>
+        <!-- Pregunta 114 -->
+        <div class="question"><p>114. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct38.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q124" value="1"> 9</label><br><label><input type="radio" name="q124" value="2"> 8</label><br><label><input type="radio" name="q124" value="3"> 10</label><br><label><input type="radio" name="q124" value="4"> 11</label></div></div>
+        <!-- Pregunta 115 -->
+        <div class="question"><p>115. El pelotón fue **DESPLEGADO**</p><div class="options"><label><input type="radio" name="q125" value="1"> en fila</label><br><label><input type="radio" name="q125" value="2"> bajo cobertura</label><br><label><input type="radio" name="q125" value="3"> trabajando</label><br><label><input type="radio" name="q125" value="4"> desplegado</label></div></div>
+        <!-- Pregunta 116 -->
+        <div class="question"><p>116. Hubo una **INTERRUPCIÓN** repentina del fuego</p><div class="options"><label><input type="radio" name="q126" value="1"> interrupción</label><br><label><input type="radio" name="q126" value="2"> reanudación</label><br><label><input type="radio" name="q126" value="3"> ráfaga</label><br><label><input type="radio" name="q126" value="4"> disminución</label></div></div>
+        <!-- Pregunta 117 -->
+        <div class="question"><p>117. El sargento tenía una voz **POTENTE**</p><div class="options"><label><input type="radio" name="q127" value="1"> baja</label><br><label><input type="radio" name="q127" value="2"> ronca</label><br><label><input type="radio" name="q127" value="3"> potente</label><br><label><input type="radio" name="q127" value="4"> aguda</label></div></div>
+        <!-- Pregunta 118 -->
+        <div class="question"><p>118. El mal tiempo **INFLUYE** en la velocidad de los aviones</p><div class="options"><label><input type="radio" name="q128" value="1"> reduce</label><br><label><input type="radio" name="q128" value="2"> aumenta</label><br><label><input type="radio" name="q128" value="3"> causa</label><br><label><input type="radio" name="q128" value="4"> influye</label></div></div>
+        <!-- Pregunta 119 -->
+        <div class="question"><p>119. El oficial **ANULÓ** la orden</p><div class="options"><label><input type="radio" name="q129" value="1"> repitió</label><br><label><input type="radio" name="q129" value="2"> anuló</label><br><label><input type="radio" name="q129" value="3"> emitió</label><br><label><input type="radio" name="q129" value="4"> explicó</label></div></div>
+        <!-- Pregunta 120 -->
+        <div class="question"><p>120. Los exploradores encontraron un **DIQUE** en el arroyo</p><div class="options"><label><input type="radio" name="q130" value="1"> puente</label><br><label><input type="radio" name="q130" value="2"> dique</label><br><label><input type="radio" name="q130" value="3"> pontón</label><br><label><input type="radio" name="q130" value="4"> vado</label></div></div>
+        <!-- Pregunta 121 -->
+        <div class="question"><p>121. Un sargento viaja de A a B, 450 millas. Va en tren 3/5 del camino a 50 millas por hora y el resto en auto a 30 millas por hora. Con 6 minutos de trasbordo, ¿cuánto tarda?</p><div class="options"><label><input type="radio" name="q131" value="1"> 11.4 horas</label><br><label><input type="radio" name="q131" value="2"> 11.5 horas</label><br><label><input type="radio" name="q131" value="3"> 12.6 horas</label><br><label><input type="radio" name="q131" value="4"> 12.7 horas</label></div></div>
+        <!-- Pregunta 122 -->
+        <div class="question"><p>122. ¿Cuántos minutos tardan tres tuberías en llenar un tanque si solas tardan 30, 45 y 90 minutos?</p><div class="options"><label><input type="radio" name="q132" value="1"> 4</label><br><label><input type="radio" name="q132" value="2"> 6⅔</label><br><label><input type="radio" name="q132" value="3"> 15</label><br><label><input type="radio" name="q132" value="4"> 30</label></div></div>
+        <!-- Pregunta 123 -->
+        <div class="question"><p>123. ¿Cuál es la longitud de un área de camuflaje de 50,000 pies cuadrados si es 5 veces más larga que ancha?</p><div class="options"><label><input type="radio" name="q133" value="1"> 400 pies</label><br><label><input type="radio" name="q133" value="2"> 500 pies</label><br><label><input type="radio" name="q133" value="3"> 600 pies</label><br><label><input type="radio" name="q133" value="4"> 5,000 pies</label></div></div>
+        <!-- Pregunta 124 -->
+        <div class="question"><p>124. Un puesto de caballería tiene avena para 45 caballos por 144 días. ¿Cuántos días dura para 20 caballos?</p><div class="options"><label><input type="radio" name="q134" value="1"> 324</label><br><label><input type="radio" name="q134" value="2"> 208</label><br><label><input type="radio" name="q134" value="3"> 479</label><br><label><input type="radio" name="q134" value="4"> 300</label></div></div>
+        <!-- Pregunta 125 -->
+        <div class="question"><p>125. El campamento A tiene 3 veces más hombres que B. El campamento C tiene 5 veces más que B. ¿Cuántas veces más hombres tiene C que A?</p><div class="options"><label><input type="radio" name="q135" value="1"> 3/5</label><br><label><input type="radio" name="q135" value="2"> 1⅔</label><br><label><input type="radio" name="q135" value="3"> 8</label><br><label><input type="radio" name="q135" value="4"> 15</label></div></div>
+        <!-- Pregunta 126 -->
+        <div class="question"><p>126. Toma 8 minutos a un tractor recorrer 1 milla. Una motocicleta es 4 veces más rápida. ¿Cuál es su velocidad en millas por hora?</p><div class="options"><label><input type="radio" name="q136" value="1"> 22</label><br><label><input type="radio" name="q136" value="2"> 30</label><br><label><input type="radio" name="q136" value="3"> 32</label><br><label><input type="radio" name="q136" value="4"> 40</label></div></div>
+        <!-- Pregunta 127 -->
+        <div class="question"><p>127. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct39.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q137" value="1"> 10</label><br><label><input type="radio" name="q137" value="2"> 12</label><br><label><input type="radio" name="q137" value="3"> 11</label><br><label><input type="radio" name="q137" value="4"> 13</label></div></div>
+        <!-- Pregunta 128 -->
+        <div class="question"><p>128. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct40.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q138" value="1"> 9</label><br><label><input type="radio" name="q138" value="2"> 7</label><br><label><input type="radio" name="q138" value="3"> 10</label><br><label><input type="radio" name="q138" value="4"> 8</label></div></div>
+        <!-- Pregunta 129 -->
+        <div class="question"><p>129. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct41.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q139" value="1"> 9</label><br><label><input type="radio" name="q139" value="2"> 10</label><br><label><input type="radio" name="q139" value="3"> 11</label><br><label><input type="radio" name="q139" value="4"> 12</label></div></div>
+        <!-- Pregunta 130 -->
+        <div class="question"><p>130. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct42.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q140" value="1"> 9</label><br><label><input type="radio" name="q140" value="2"> 12</label><br><label><input type="radio" name="q140" value="3"> 11</label><br><label><input type="radio" name="q140" value="4"> 10</label></div></div>
+        <!-- Pregunta 131 -->
+        <div class="question"><p>131. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct43.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q141" value="1"> 10</label><br><label><input type="radio" name="q141" value="2"> 11</label><br><label><input type="radio" name="q141" value="3"> 12</label><br><label><input type="radio" name="q141" value="4"> 13</label></div></div>
+        <!-- Pregunta 132 -->
+        <div class="question"><p>132. ¿Cuántas cajas?</p><div class="options"><img src="assets/agct44.jpg" alt="¿Cuántas cajas?"><br><label><input type="radio" name="q142" value="1"> 10</label><br><label><input type="radio" name="q142" value="2"> 11</label><br><label><input type="radio" name="q142" value="3"> 13</label><br><label><input type="radio" name="q142" value="4"> 14</label></div></div>
+        <!-- Pregunta 133 -->
+        <div class="question"><p>133. El oficial **INCULCÓ** confianza</p><div class="options"><label><input type="radio" name="q143" value="1"> necesitó</label><br><label><input type="radio" name="q143" value="2"> desarrolló</label><br><label><input type="radio" name="q143" value="3"> inculcó</label><br><label><input type="radio" name="q143" value="4"> poseyó</label></div></div>
+        <!-- Pregunta 134 -->
+        <div class="question"><p>134. Una atmósfera **TRANQUILA** predominaba en el campamento</p><div class="options"><label><input type="radio" name="q144" value="1"> tumultuosa</label><br><label><input type="radio" name="q144" value="2"> tranquila</label><br><label><input type="radio" name="q144" value="3"> tormentosa</label><br><label><input type="radio" name="q144" value="4"> alegre</label></div></div>
+        <!-- Pregunta 135 -->
+        <div class="question"><p>135. Tenía un conocimiento **SUPERFICIAL** de las normas</p><div class="options"><label><input type="radio" name="q145" value="1"> excelente</label><br><label><input type="radio" name="q145" value="2"> amplio</label><br><label><input type="radio" name="q145" value="3"> superior</label><br><label><input type="radio" name="q145" value="4"> superficial</label></div></div>
+        <!-- Pregunta 136 -->
+        <div class="question"><p>136. El Campamento A tiene el doble de hombres que B, y C tiene 7 veces más que B. ¿Cuántas veces más hombres tiene A que C?</p><div class="options"><label><input type="radio" name="q146" value="1"> 2/7</label><br><label><input type="radio" name="q146" value="2"> 3½</label><br><label><input type="radio" name="q146" value="3"> 5</label><br><label><input type="radio" name="q146" value="4"> 14</label></div></div>
+        <!-- Pregunta 137 -->
+        <div class="question"><p>137. La suma de los ángulos de un triángulo es 180 grados. Los ángulos están en proporción 1:3:5. ¿Cuál es el ángulo mayor?</p><div class="options"><label><input type="radio" name="q147" value="1"> 80 grados</label><br><label><input type="radio" name="q147" value="2"> 90 grados</label><br><label><input type="radio" name="q147" value="3"> 100 grados</label><br><label><input type="radio" name="q147" value="4"> 120 grados</label></div></div>
+        <!-- Pregunta 138 -->
+        <div class="question"><p>138. En un regimiento de 1,800 hombres hay 144 cabos. Si se desea que 1 de cada 10 sea cabo, ¿qué porcentaje debe ascender?</p><div class="options"><label><input type="radio" name="q148" value="1"> 2.3</label><br><label><input type="radio" name="q148" value="2"> 3.6</label><br><label><input type="radio" name="q148" value="3"> 4</label><br><label><input type="radio" name="q148" value="4"> 2</label></div></div>
+        <!-- Pregunta 139 -->
+        <div class="question"><p>139. ¿Cuál es el área en pulgadas cuadradas de un blanco rectangular de 8 pulgadas de largo y 10 pulgadas de diagonal?</p><div class="options"><label><input type="radio" name="q149" value="1"> 16</label><br><label><input type="radio" name="q149" value="2"> 40</label><br><label><input type="radio" name="q149" value="3"> 48</label><br><label><input type="radio" name="q149" value="4"> 80</label></div></div>
+        <!-- Pregunta 140 -->
+        <div class="question"><p>140. Un clerk escribe 60 palabras por minuto. ¿Cuánto tarda en escribir 10 cartas: 5 de 480 palabras y 5 de 600 palabras?</p><div class="options"><label><input type="radio" name="q150" value="1"> 50 minutos</label><br><label><input type="radio" name="q150" value="2"> 1 hora 20 minutos</label><br><label><input type="radio" name="q150" value="3"> 1 hora 30 minutos</label><br><label><input type="radio" name="q150" value="4"> 2 horas 15 minutos</label></div></div>
+        <button type="submit" class="submit-btn" id="submitBtn">Enviar</button>
     </form>
-    
-<style>
-    #timer {
-        position: fixed; /* Make the timer stay at the top */
-        top: 10px; /* Adjust top position */
-        right: 10px; /* Adjust right position */
-        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-        padding: 5px 10px; /* Adjust padding */
-        border-radius: 5px; /* Rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-        z-index: 1000; /* Ensure it stays on top of other elements */
-        font-size: 16px; /* Adjust font size */
-    }
-</style>
+    <script>
+        let totalSeconds = 2400;
+        const timerDisplay = document.getElementById('timer');
+        const form = document.getElementById('testForm');
+        const submitBtn = document.getElementById('submitBtn');
 
-<script>
-    // Timer functionality
-    let totalSeconds = 2400; // 40 minutes
-    const timerDisplay = document.getElementById('timer');
-    const form = document.getElementById('testForm');
-    const submitBtn = document.getElementById('submitBtn');
-
-function updateTimer() {
-    const minutes = Math.floor(totalSeconds / 60);
-    let seconds = totalSeconds % 60;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-    timerDisplay.textContent = `Time Remaining: ${minutes}:${seconds}`;
-    if (totalSeconds <= 0) {
-        clearInterval(timerInterval);
-        form.querySelectorAll('input[type=radio]').forEach(radio => radio.disabled = true);
-        calculateIQScore(); // Automatically calculate IQ score when timer runs out
-    } else {
-        totalSeconds--;
-    }
-}
-
-    let timerInterval = setInterval(updateTimer, 1000);
-
-    // Function to calculate and display IQ score
-    function calculateIQScore() {
-        const selectedAnswers = {};
-        const questions = form.querySelectorAll('.question');
-        questions.forEach((question, index) => {
-            const radios = question.querySelectorAll('input[type=radio]');
-            radios.forEach(radio => {
-                if (radio.checked) {
-                    selectedAnswers[`Question ${index + 11}`] = radio.value;
-                }
-            });
-        });
-
-        // Answer key for SD15 IQ score calculation
-        const answerKey = [
-            3, 2, 3, 4, 2, 4, 2, 3, 3, 2, 3, 2, 1, 3, 3, 3, 1, 2, 2, 4, 4, 2, 2, 2, 1, 1, 2, 4, 1, 1, 2, 1, 3, 1, 4, 3, 2, 4, 4, 4, 1, 3, 2, 4, 3, 3, 3, 1, 2, 1, 3, 2, 1, 3, 1, 4, 4, 3, 4, 3, 4, 3, 1, 2, 1, 1, 2, 4, 2, 3, 1, 1, 4, 3, 3, 2, 1, 1, 1, 3, 1, 2, 2, 2, 3, 1, 3, 3, 2, 3, 1, 1, 2, 2, 3, 1, 1, 3, 2, 1, 1, 3, 2, 1, 3, 4, 2, 4, 2, 3, 3, 3, 3, 1, 4, 1, 3, 4, 2, 2, 2, 3, 2, 1, 2, 2, 3, 1, 2, 3, 2, 4, 3, 2, 4, 1, 3, 4, 3, 3
-        ];
-
-        // Norm data for SD15 IQ score calculation
-        const normData = [
-            66, 67, 68, 70, 72, 72, 73, 74, 74, 75, 76, 77, 78, 78, 78, 79, 80, 80, 80, 81, 81, 82, 83, 83, 84, 84, 85, 85, 86, 86, 87, 87, 88, 89, 90, 90, 90, 91, 92, 92, 92, 93, 94, 94, 95, 96, 96, 96, 97, 98, 98, 98, 99, 100, 101, 102, 102, 103, 103, 104, 104, 105,106, 106, 107, 108, 108, 109, 109, 110, 110, 111, 112, 112, 113, 114, 114, 115, 116, 116, 116, 117, 118, 119, 120, 120, 120, 121, 122, 122, 123, 124, 125, 126, 126, 126, 127, 128, 128, 129, 130, 131, 132, 132, 133, 134, 134, 135, 136, 137, 138, 138, 138, 139, 139, 140, 140, 140, 140, 141, 141, 142, 142, 143, 143, 144, 144, 144, 144, 145, 145, 146, 146, 146, 146, 147, 147, 148, 148, 149
-        ];
-
-        // Calculate the raw score: correct answers minus 1/3 of the wrong answers
-        let correctAnswers = 0;
-        let wrongAnswers = 0;
-
-        for (let i = 0; i < answerKey.length; i++) {
-            if (selectedAnswers[`Question ${i + 11}`] == answerKey[i]) {
-                correctAnswers++;
-            } else if (selectedAnswers[`Question ${i + 11}`] !== undefined) {
-                wrongAnswers++;
+        function updateTimer() {
+            const minutes = Math.floor(totalSeconds / 60);
+            let seconds = totalSeconds % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            timerDisplay.textContent = `Tiempo Restante: ${minutes}:${seconds}`;
+            if (totalSeconds <= 0) {
+                clearInterval(timerInterval);
+                form.querySelectorAll('input[type=radio]').forEach(radio => radio.disabled = true);
+                calculateIQScore();
+            } else {
+                totalSeconds--;
             }
         }
 
-        const rawScore = Math.max(0, correctAnswers - (wrongAnswers / 3)); // Ensure the raw score is not negative
-        const roundedRawScore = Math.round(rawScore); // Round to the nearest whole number for norm lookup
+        let timerInterval = setInterval(updateTimer, 1000);
 
-        // Get the SD15 IQ score based on the rounded raw score
-        const sd15IQScore = normData[roundedRawScore] || "Invalid Score"; // Handle edge cases where the score is out of bounds
+        function calculateIQScore() {
+            const selectedAnswers = {};
+            const questions = form.querySelectorAll('.question');
+            questions.forEach((question, index) => {
+                const radios = question.querySelectorAll('input[type=radio]');
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        selectedAnswers[`Question ${index + 11}`] = radio.value;
+                    }
+                });
+            });
 
-        // Display the SD15 IQ score
-        alert(`SD15 IQ Score: ${sd15IQScore}\nCorrect Answers: ${correctAnswers}\nWrong Answers: ${wrongAnswers}\nRaw Score: ${rawScore.toFixed(2)}`);
-    }
+            const answerKey = [3, 2, 3, 4, 2, 4, 2, 3, 3, 2, 3, 2, 1, 3, 3, 3, 1, 2, 2, 4, 4, 2, 2, 2, 1, 1, 2, 4, 1, 1, 2, 1, 3, 1, 4, 3, 2, 4, 4, 4, 1, 3, 2, 4, 3, 3, 3, 1, 2, 1, 3, 2, 1, 3, 1, 4, 4, 3, 4, 3, 4, 3, 1, 2, 1, 1, 2, 4, 2, 3, 1, 1, 4, 3, 3, 2, 1, 1, 1, 3, 1, 2, 2, 2, 3, 1, 3, 3, 2, 3, 1, 1, 2, 2, 3, 1, 1, 3, 2, 1, 1, 3, 2, 1, 3, 4, 2, 4, 2, 3, 3, 3, 3, 1, 4, 1, 3, 4, 2, 2, 2, 3, 2, 1, 2, 2, 3, 1, 2, 3, 2, 4, 3, 2, 4, 1, 3, 4, 3, 3];
+            const normData = [66, 67, 68, 70, 72, 72, 73, 74, 74, 75, 76, 77, 78, 78, 78, 79, 80, 80, 80, 81, 81, 82, 83, 83, 84, 84, 85, 85, 86, 86, 87, 87, 88, 89, 90, 90, 90, 91, 92, 92, 92, 93, 94, 94, 95, 96, 96, 96, 97, 98, 98, 98, 99, 100, 101, 102, 102, 103, 103, 104, 104, 105, 106, 106, 107, 108, 108, 109, 109, 110, 110, 111, 112, 112, 113, 114, 114, 115, 116, 116, 116, 117, 118, 119, 120, 120, 120, 121, 122, 122, 123, 124, 125, 126, 126, 126, 127, 128, 128, 129, 130, 131, 132, 132, 133, 134, 134, 135, 136, 137, 138, 138, 138, 139, 139, 140, 140, 140, 140, 141, 141, 142, 142, 143, 143, 144, 144, 144, 144, 145, 145, 146, 146, 146, 146, 147, 147, 148, 148, 149];
 
-    // Prevent form submission and calculate IQ score
-    document.getElementById('testForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        clearInterval(timerInterval); // Stop the timer
-        calculateIQScore(); // Calculate and display IQ score
-    });
+            let correctAnswers = 0, wrongAnswers = 0;
+            for (let i = 0; i < answerKey.length; i++) {
+                if (selectedAnswers[`Question ${i + 11}`] == answerKey[i]) {
+                    correctAnswers++;
+                } else if (selectedAnswers[`Question ${i + 11}`] !== undefined) {
+                    wrongAnswers++;
+                }
+            }
 
-    // Show the submit button immediately
-    submitBtn.style.display = 'block';
-</script>
+            const rawScore = Math.max(0, correctAnswers - (wrongAnswers / 3));
+            const roundedRawScore = Math.round(rawScore);
+            const sd15IQScore = normData[roundedRawScore] || "Puntaje Inválido";
+            alert(`Puntaje IQ SD15: ${sd15IQScore}\nRespuestas Correctas: ${correctAnswers}\nRespuestas Incorrectas: ${wrongAnswers}\nPuntaje Bruto: ${rawScore.toFixed(2)}`);
+        }
 
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            clearInterval(timerInterval);
+            calculateIQScore();
+        });
+
+        submitBtn.style.display = 'block';
+    </script>
 </body>
 </html>
